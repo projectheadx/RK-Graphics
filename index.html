@@ -127,6 +127,68 @@
 			color: var(--brand-pink);
 		}
 
+		/* Welcome Section */
+		.welcome-section {
+			background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+			padding: 60px 0;
+		}
+
+			.welcome-section .welcome-badge {
+				background: var(--brand-pink);
+				color: white;
+				padding: 8px 25px;
+				border-radius: 30px;
+				font-weight: 600;
+				font-size: 0.9rem;
+				display: inline-block;
+				margin-bottom: 15px;
+			}
+
+			.welcome-section .experience-year {
+				font-size: 4rem;
+				font-weight: 800;
+				color: var(--brand-pink);
+				line-height: 1;
+			}
+
+			.welcome-section .experience-text {
+				font-size: 1.1rem;
+				font-weight: 600;
+				color: var(--brand-blue);
+			}
+
+			.welcome-section .welcome-content {
+				font-size: 1rem;
+				color: #555;
+				line-height: 1.8;
+			}
+
+			.welcome-section .service-tag {
+				display: inline-block;
+				background: rgba(233, 30, 99, 0.08);
+				color: var(--brand-pink);
+				padding: 4px 14px;
+				border-radius: 20px;
+				font-size: 0.8rem;
+				font-weight: 600;
+				margin: 3px;
+				border: 1px solid rgba(233, 30, 99, 0.15);
+			}
+
+			.welcome-section .call-box {
+				background: var(--brand-blue);
+				color: white;
+				padding: 20px 30px;
+				border-radius: 12px;
+				margin-top: 20px;
+			}
+
+				.welcome-section .call-box .phone-number {
+					font-size: 1.8rem;
+					font-weight: 700;
+					color: var(--brand-pink);
+				}
+
 		/* Clients Section */
 		.client-card {
 			background: white;
@@ -460,6 +522,51 @@
 		<button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
 		<button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
 	</div>
+
+	<!-- ======== 🆕 NEW: WELCOME TO RK GRAPHICS SECTION ======== -->
+	<section class="welcome-section">
+		<div class="container">
+			<div class="row align-items-center g-4">
+				<div class="col-lg-7">
+					<span class="welcome-badge"><i class="fa-solid fa-star me-2"></i> Welcome To RK Graphics</span>
+					<div class="d-flex align-items-center gap-3 mb-3">
+						<span class="experience-year">10+</span>
+						<div>
+							<span class="experience-text">YEARS OF EXPERIENCE</span>
+							<p class="text-muted small mb-0">IN DIGITAL PRINTING & ADVERTISING</p>
+						</div>
+					</div>
+					<p class="welcome-content">
+						We are one of the fastest commercial offset printers in Arakkonam. We are passionate about the finest, most cost-effective and timely printing services and promotional items available anywhere in the region. Up-to-date on technology, we create beautiful printed projects, with an easy and pain-free workflow system. We pride ourselves on our commitment to great customer service.
+					</p>
+					<p class="welcome-content">
+						Our Offset Printing makes use of advance technology to produce best quality results. In larger volumes offset printing is the most effective and efficient way to produce unrivaled quality and consistency compared with other printing methods. We can produce a large range of work from business cards, envelopes and stationery, to brochures and catalogues, point of sale material and packaging.
+					</p>
+					<div class="mt-3">
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> Business Cards</span>
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> Envelopes</span>
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> Stationery</span>
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> Brochures</span>
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> Catalogues</span>
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> POS Materials</span>
+						<span class="service-tag"><i class="fa-solid fa-check me-1"></i> Packaging</span>
+					</div>
+				</div>
+				<div class="col-lg-5">
+					<div class="call-box text-center">
+						<i class="fa-solid fa-phone fs-2 text-danger mb-2"></i>
+						<h5 class="text-white">CALL US TO GET</h5>
+						<h3 class="text-danger fw-bold">FREE QUOTES</h3>
+						<a href="tel:+919952760656" class="phone-number text-decoration-none" style="color: #fff;">
+							<i class="fa-solid fa-phone me-2"></i> 099527 60656
+						</a>
+						<p class="text-secondary small mt-2"><i class="fa-regular fa-clock me-1"></i> 24/7 Support - Mon to Sat</p>
+						<a href="contact.html" class="btn btn-brand mt-2 w-100">Get Free Quote Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- 3. Pillars Strip -->
 	<section class="py-3 bg-light border-bottom">
@@ -868,11 +975,10 @@
 		</div>
 	</section>
 
-	<!-- 10. FOOTER - DETAILED -->
+	<!-- 10. FOOTER -->
 	<footer class="bg-dark text-white pt-5 pb-4">
 		<div class="container">
 			<div class="row g-4">
-				<!-- Brand -->
 				<div class="col-lg-4 col-md-6">
 					<h5 class="fw-bold text-white mb-3">
 						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
@@ -888,7 +994,6 @@
 					</div>
 				</div>
 
-				<!-- Quick Links -->
 				<div class="col-lg-2 col-md-6">
 					<h6 class="fw-bold text-white mb-3">Quick Links</h6>
 					<ul class="list-unstyled">
@@ -900,7 +1005,6 @@
 					</ul>
 				</div>
 
-				<!-- Services -->
 				<div class="col-lg-3 col-md-6">
 					<h6 class="fw-bold text-white mb-3">Our Services</h6>
 					<ul class="list-unstyled">
@@ -912,7 +1016,6 @@
 					</ul>
 				</div>
 
-				<!-- Contact Info -->
 				<div class="col-lg-3 col-md-6">
 					<h6 class="fw-bold text-white mb-3">Contact Info</h6>
 					<ul class="list-unstyled">
