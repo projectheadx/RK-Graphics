@@ -39,21 +39,40 @@
 			margin-top: -5px;
 		}
 
+		/* ===== PAGE HEADER WITH BACKGROUND IMAGE ===== */
 		.page-header {
-			background: linear-gradient(135deg, var(--brand-blue), #2a5298);
-			color: white;
-			padding: 60px 0;
 			position: relative;
+			padding: 80px 0;
+			color: white;
+			background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1400&q=80');
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
 		}
 
-			.page-header::after {
+			.page-header::before {
 				content: '';
 				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				height: 4px;
-				background: var(--brand-pink);
+				inset: 0;
+				background: linear-gradient(135deg, rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.75));
+				z-index: 0;
+			}
+
+			.page-header .container {
+				position: relative;
+				z-index: 1;
+			}
+
+			.page-header h1 {
+				text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+			}
+
+			.page-header .lead {
+				text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+			}
+
+			.page-header .badge {
+				box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
 			}
 
 		.btn-brand {
@@ -284,6 +303,18 @@
 				color: white;
 				transform: translateY(-3px);
 			}
+
+		/* Responsive */
+		@media (max-width: 768px) {
+			.page-header {
+				padding: 50px 0;
+				background-attachment: scroll;
+			}
+
+				.page-header h1 {
+					font-size: 2rem;
+				}
+		}
 	</style>
 </head>
 <body>
@@ -318,12 +349,12 @@
 		</div>
 	</nav>
 
-	<!-- Page Header -->
+	<!-- ===== PAGE HEADER WITH BACKGROUND IMAGE ===== -->
 	<section class="page-header text-center">
 		<div class="container">
 			<h1 class="fw-bold display-4">Contact Us</h1>
-			<p class="lead">Get in touch for instant quotes & inquiries</p>
-			<p class="mb-0"><span class="badge bg-danger fs-6">We're Here to Help!</span></p>
+			<p class="lead fs-4">Get in touch for instant quotes & inquiries</p>
+			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">We're Here to Help!</span></p>
 		</div>
 	</section>
 

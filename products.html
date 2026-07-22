@@ -1,541 +1,563 @@
 <!DOCTYPE html>
 <html lang="ta">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Products | RK Graphics</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<style>
-		:root {
-			--brand-pink: #e91e63;
-			--brand-blue: #1e3c72;
-			--whatsapp-green: #25D366;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | RK Graphics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --brand-pink: #e91e63;
+            --brand-blue: #1e3c72;
+            --whatsapp-green: #25D366;
+        }
 
-		body {
-			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-			color: #333;
-		}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
 
-		.brand-text-rk {
-			color: var(--brand-pink);
-			font-weight: 800;
-			font-size: 1.8rem;
-		}
+        .brand-text-rk {
+            color: var(--brand-pink);
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
 
-		.brand-text-graphics {
-			color: var(--brand-blue);
-			font-weight: 700;
-			font-size: 1.8rem;
-		}
+        .brand-text-graphics {
+            color: var(--brand-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
 
-		.tagline {
-			font-size: 0.65rem;
-			color: var(--brand-pink);
-			letter-spacing: 1px;
-			font-weight: bold;
-			display: block;
-			margin-top: -5px;
-		}
+        .tagline {
+            font-size: 0.65rem;
+            color: var(--brand-pink);
+            letter-spacing: 1px;
+            font-weight: bold;
+            display: block;
+            margin-top: -5px;
+        }
 
+        /* ===== PAGE HEADER WITH BACKGROUND IMAGE ===== */
 		.page-header {
-			background: linear-gradient(135deg, var(--brand-blue), #2a5298);
-			color: white;
-			padding: 60px 0;
 			position: relative;
-		}
-
-			.page-header::after {
-				content: '';
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				height: 4px;
-				background: var(--brand-pink);
-			}
-
-		.btn-brand {
-			background-color: var(--brand-pink);
+			padding: 80px 0;
 			color: white;
-			font-weight: 600;
-			border-radius: 25px;
-			padding: 10px 25px;
-			border: none;
+			background-image: url('img/digital-press-g1.hvif');
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
 		}
 
-			.btn-brand:hover {
-				background-color: #c2185b;
-				color: white;
-			}
+        .page-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.75));
+            z-index: 0;
+        }
 
-		.btn-outline-brand {
-			border: 2px solid var(--brand-pink);
-			color: var(--brand-pink);
-			font-weight: 600;
-			border-radius: 25px;
-			padding: 8px 22px;
-		}
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
 
-			.btn-outline-brand:hover {
-				background-color: var(--brand-pink);
-				color: white;
-			}
+        .page-header h1 {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-		.product-card {
-			border: none;
-			border-radius: 12px;
-			box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-			transition: all 0.3s ease;
-			border: 1px solid #f0f0f0;
-			height: 100%;
-			padding: 20px 15px;
-			background: white;
-			text-align: center;
-		}
+        .page-header .lead {
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
 
-			.product-card:hover {
-				transform: translateY(-8px);
-				box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
-				border-color: var(--brand-pink);
-			}
+        .page-header .badge {
+            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+        }
 
-			.product-card .product-icon {
-				font-size: 2.5rem;
-				color: var(--brand-pink);
-				margin-bottom: 10px;
-				transition: transform 0.3s;
-			}
+        .btn-brand {
+            background-color: var(--brand-pink);
+            color: white;
+            font-weight: 600;
+            border-radius: 25px;
+            padding: 10px 25px;
+            border: none;
+        }
 
-			.product-card:hover .product-icon {
-				transform: scale(1.1);
-			}
+        .btn-brand:hover {
+            background-color: #c2185b;
+            color: white;
+        }
 
-			.product-card .product-name {
-				font-weight: 700;
-				color: var(--brand-blue);
-				font-size: 1rem;
-				margin-bottom: 5px;
-			}
+        .btn-outline-brand {
+            border: 2px solid var(--brand-pink);
+            color: var(--brand-pink);
+            font-weight: 600;
+            border-radius: 25px;
+            padding: 8px 22px;
+        }
 
-			.product-card:hover .product-name {
-				color: var(--brand-pink);
-			}
+        .btn-outline-brand:hover {
+            background-color: var(--brand-pink);
+            color: white;
+        }
 
-			.product-card .product-sub {
-				font-size: 0.75rem;
-				color: #999;
-			}
+        .product-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            height: 100%;
+            padding: 20px 15px;
+            background: white;
+            text-align: center;
+        }
 
-		.stats-section {
-			background: #f8f9fa;
-			padding: 30px 0;
-		}
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
+            border-color: var(--brand-pink);
+        }
 
-			.stats-section .stat-number {
-				font-size: 2.5rem;
-				font-weight: 800;
-				color: var(--brand-pink);
-			}
+        .product-card .product-icon {
+            font-size: 2.5rem;
+            color: var(--brand-pink);
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
 
-			.stats-section .stat-label {
-				font-weight: 600;
-				color: var(--brand-blue);
-			}
+        .product-card:hover .product-icon {
+            transform: scale(1.1);
+        }
 
-		/* WhatsApp */
-		.whatsapp-wrapper {
-			position: fixed;
-			bottom: 30px;
-			right: 30px;
-			z-index: 1000;
-		}
+        .product-card .product-name {
+            font-weight: 700;
+            color: var(--brand-blue);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
 
-		.whatsapp-float {
-			background: var(--whatsapp-green);
-			color: white;
-			width: 60px;
-			height: 60px;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 2.2rem;
-			box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-			transition: all 0.3s ease;
-			text-decoration: none;
-			animation: pulse 2s infinite;
-		}
+        .product-card:hover .product-name {
+            color: var(--brand-pink);
+        }
 
-			.whatsapp-float:hover {
-				transform: scale(1.1);
-				color: white;
-				box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
-			}
+        .product-card .product-sub {
+            font-size: 0.75rem;
+            color: #999;
+        }
 
-		@keyframes pulse {
-			0% {
-				box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
-			}
+        .stats-section {
+            background: #f8f9fa;
+            padding: 30px 0;
+        }
 
-			70% {
-				box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-			}
+        .stats-section .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--brand-pink);
+        }
 
-			100% {
-				box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-			}
-		}
+        .stats-section .stat-label {
+            font-weight: 600;
+            color: var(--brand-blue);
+        }
 
-		.whatsapp-tooltip {
-			display: none;
-			position: absolute;
-			bottom: 70px;
-			right: -10px;
-			background: white;
-			padding: 10px 18px;
-			border-radius: 10px;
-			box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-			font-size: 0.85rem;
-			font-weight: 600;
-			color: #333;
-			white-space: nowrap;
-			border: 1px solid #eee;
-		}
+        /* WhatsApp */
+        .whatsapp-wrapper {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
 
-			.whatsapp-tooltip::after {
-				content: '';
-				position: absolute;
-				bottom: -10px;
-				right: 20px;
-				border-left: 10px solid transparent;
-				border-right: 10px solid transparent;
-				border-top: 10px solid white;
-			}
+        .whatsapp-float {
+            background: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
 
-		.whatsapp-wrapper:hover .whatsapp-tooltip {
-			display: block;
-		}
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: white;
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
 
-		/* Footer */
-		.footer-link {
-			color: rgba(255,255,255,0.7);
-			text-decoration: none;
-			transition: color 0.3s;
-		}
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
 
-			.footer-link:hover {
-				color: var(--brand-pink);
-			}
+        .whatsapp-tooltip {
+            display: none;
+            position: absolute;
+            bottom: 70px;
+            right: -10px;
+            background: white;
+            padding: 10px 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+            border: 1px solid #eee;
+        }
 
-		.footer-social {
-			display: inline-block;
-			width: 38px;
-			height: 38px;
-			border-radius: 50%;
-			background: rgba(255,255,255,0.1);
-			text-align: center;
-			line-height: 38px;
-			color: white;
-			transition: all 0.3s;
-			margin: 0 5px;
-		}
+        .whatsapp-tooltip::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 20px;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+        }
 
-			.footer-social:hover {
-				background: var(--brand-pink);
-				color: white;
-				transform: translateY(-3px);
-			}
-	</style>
+        .whatsapp-wrapper:hover .whatsapp-tooltip {
+            display: block;
+        }
+
+        /* Footer */
+        .footer-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-link:hover {
+            color: var(--brand-pink);
+        }
+
+        .footer-social {
+            display: inline-block;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            text-align: center;
+            line-height: 38px;
+            color: white;
+            transition: all 0.3s;
+            margin: 0 5px;
+        }
+
+        .footer-social:hover {
+            background: var(--brand-pink);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 50px 0;
+                background-attachment: scroll;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-		<div class="container">
-			<a class="navbar-brand d-flex flex-column align-items-start" href="index.html">
-				<div>
-					<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
-					<span class="brand-text-graphics">Graphics</span>
-				</div>
-				<span class="tagline">HARD WORK... NEVER FAILS...</span>
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav ms-auto align-items-center">
-					<li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
-					<li class="nav-item"><a class="nav-link active fw-bold text-danger" href="products.html">Products</a></li>
-					<li class="nav-item"><a class="nav-link fw-semibold" href="gallery.html">Gallery</a></li>
-					<li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
-					<li class="nav-item ms-lg-3">
-						<a href="tel:+919952760656" class="btn btn-brand btn-sm text-white">
-							<i class="fa-solid fa-phone me-1"></i> Call Now
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex flex-column align-items-start" href="index.html">
+                <div>
+                    <span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
+                    <span class="brand-text-graphics">Graphics</span>
+                </div>
+                <span class="tagline">HARD WORK... NEVER FAILS...</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold text-danger" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="tel:+919952760656" class="btn btn-brand btn-sm text-white">
+                            <i class="fa-solid fa-phone me-1"></i> Call Now
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-	<!-- Page Header -->
-	<section class="page-header text-center">
-		<div class="container">
-			<h1 class="fw-bold display-4">Our Complete Product Catalog</h1>
-			<p class="lead">Everything listed on our visiting card & more!</p>
-			<p class="mb-0"><span class="badge bg-danger fs-6">17+ Products</span></p>
-		</div>
-	</section>
+    <!-- ===== PAGE HEADER WITH BACKGROUND IMAGE ===== -->
+    <section class="page-header text-center">
+        <div class="container">
+            <h1 class="fw-bold display-4">Our Complete Product Catalog</h1>
+            <p class="lead fs-4">Everything listed on our visiting card & more!</p>
+            <p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">17+ Products</span></p>
+        </div>
+    </section>
 
-	<!-- Stats -->
-	<section class="stats-section border-bottom">
-		<div class="container">
-			<div class="row text-center g-3">
-				<div class="col-4">
-					<div class="stat-number">17+</div>
-					<div class="stat-label">Products</div>
-				</div>
-				<div class="col-4">
-					<div class="stat-number">10+</div>
-					<div class="stat-label">Years Experience</div>
-				</div>
-				<div class="col-4">
-					<div class="stat-number">1000+</div>
-					<div class="stat-label">Happy Clients</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <!-- Stats -->
+    <section class="stats-section border-bottom">
+        <div class="container">
+            <div class="row text-center g-3">
+                <div class="col-4">
+                    <div class="stat-number">17+</div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="col-4">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="col-4">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Products Grid -->
-	<section class="py-5">
-		<div class="container">
-			<div class="row g-3">
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-scroll"></i></div>
-						<div class="product-name">Flex Printing</div>
-						<div class="product-sub">Banners & Backdrops</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-image"></i></div>
-						<div class="product-name">Posters</div>
-						<div class="product-sub">Promotional Posters</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-						<div class="product-name">Invitation</div>
-						<div class="product-sub">Wedding & Events</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-calendar-days"></i></div>
-						<div class="product-name">Calendars</div>
-						<div class="product-sub">Custom Calendars</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-file-lines"></i></div>
-						<div class="product-name">Pamphlet</div>
-						<div class="product-sub">Flyers & Brochures</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-stamp"></i></div>
-						<div class="product-name">Stamp</div>
-						<div class="product-sub">Rubber Stamps</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-id-card"></i></div>
-						<div class="product-name">PVC ID Cards</div>
-						<div class="product-sub">Plastic ID Cards</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-lightbulb"></i></div>
-						<div class="product-name">LED Sign</div>
-						<div class="product-sub">Glowing Sign Boards</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-envelope"></i></div>
-						<div class="product-name">Envelope</div>
-						<div class="product-sub">Custom Envelopes</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-address-card"></i></div>
-						<div class="product-name">Business Cards</div>
-						<div class="product-sub">Visiting Cards</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-bag-shopping"></i></div>
-						<div class="product-name">Poly Bags</div>
-						<div class="product-sub">Custom Printed Bags</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-frame"></i></div>
-						<div class="product-name">Photo Frame</div>
-						<div class="product-sub">Custom Frames</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-pen-fancy"></i></div>
-						<div class="product-name">Letter Pad</div>
-						<div class="product-sub">Branded Letterheads</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-tag"></i></div>
-						<div class="product-name">Stickers</div>
-						<div class="product-sub">Custom Stickers</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-key"></i></div>
-						<div class="product-name">KeyChain</div>
-						<div class="product-sub">Custom Keychains</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-trophy"></i></div>
-						<div class="product-name">Trophy</div>
-						<div class="product-sub">Awards & Trophies</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3 mx-auto">
-					<div class="product-card">
-						<div class="product-icon"><i class="fa-solid fa-plate-wheat"></i></div>
-						<div class="product-name">Name Plate</div>
-						<div class="product-sub">Acrylic & Metal Plates</div>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
-					</div>
-				</div>
-			</div>
+    <!-- Products Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-scroll"></i></div>
+                        <div class="product-name">Flex Printing</div>
+                        <div class="product-sub">Banners & Backdrops</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-image"></i></div>
+                        <div class="product-name">Posters</div>
+                        <div class="product-sub">Promotional Posters</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <div class="product-name">Invitation</div>
+                        <div class="product-sub">Wedding & Events</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                        <div class="product-name">Calendars</div>
+                        <div class="product-sub">Custom Calendars</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-file-lines"></i></div>
+                        <div class="product-name">Pamphlet</div>
+                        <div class="product-sub">Flyers & Brochures</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-stamp"></i></div>
+                        <div class="product-name">Stamp</div>
+                        <div class="product-sub">Rubber Stamps</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-id-card"></i></div>
+                        <div class="product-name">PVC ID Cards</div>
+                        <div class="product-sub">Plastic ID Cards</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="product-name">LED Sign</div>
+                        <div class="product-sub">Glowing Sign Boards</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="product-name">Envelope</div>
+                        <div class="product-sub">Custom Envelopes</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-address-card"></i></div>
+                        <div class="product-name">Business Cards</div>
+                        <div class="product-sub">Visiting Cards</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                        <div class="product-name">Poly Bags</div>
+                        <div class="product-sub">Custom Printed Bags</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-frame"></i></div>
+                        <div class="product-name">Photo Frame</div>
+                        <div class="product-sub">Custom Frames</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+                        <div class="product-name">Letter Pad</div>
+                        <div class="product-sub">Branded Letterheads</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-tag"></i></div>
+                        <div class="product-name">Stickers</div>
+                        <div class="product-sub">Custom Stickers</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-key"></i></div>
+                        <div class="product-name">KeyChain</div>
+                        <div class="product-sub">Custom Keychains</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="product-name">Trophy</div>
+                        <div class="product-sub">Awards & Trophies</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3 mx-auto">
+                    <div class="product-card">
+                        <div class="product-icon"><i class="fa-solid fa-plate-wheat"></i></div>
+                        <div class="product-name">Name Plate</div>
+                        <div class="product-sub">Acrylic & Metal Plates</div>
+                        <a href="contact.html" class="btn btn-outline-brand mt-2">Order Now</a>
+                    </div>
+                </div>
+            </div>
 
-			<div class="text-center mt-5 p-4 bg-light rounded-4">
-				<h4 style="color: var(--brand-blue);">Need a custom quote?</h4>
-				<p class="text-muted">Contact us for bulk orders and special pricing</p>
-				<a href="contact.html" class="btn btn-brand">Contact Us Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
-			</div>
-		</div>
-	</section>
+            <div class="text-center mt-5 p-4 bg-light rounded-4">
+                <h4 style="color: var(--brand-blue);">Need a custom quote?</h4>
+                <p class="text-muted">Contact us for bulk orders and special pricing</p>
+                <a href="contact.html" class="btn btn-brand">Contact Us Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
+            </div>
+        </div>
+    </section>
 
-	<!-- Footer -->
-	<footer class="bg-dark text-white pt-5 pb-4">
-		<div class="container">
-			<div class="row g-4">
-				<div class="col-lg-4 col-md-6">
-					<h5 class="fw-bold text-white mb-3">
-						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
-						<span class="brand-text-graphics" style="color: #fff;">Graphics</span>
-					</h5>
-					<p class="text-secondary small">Hard Work... Never Fails...</p>
-					<p class="text-secondary small mb-3">Complete Printing & Advertising Solutions since 2016.</p>
-					<div>
-						<a href="https://wa.me/919952760656" target="_blank" class="footer-social"><i class="fab fa-whatsapp"></i></a>
-						<a href="#" target="_blank" class="footer-social"><i class="fab fa-instagram"></i></a>
-						<a href="#" target="_blank" class="footer-social"><i class="fab fa-facebook-f"></i></a>
-						<a href="#" target="_blank" class="footer-social"><i class="fab fa-youtube"></i></a>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6">
-					<h6 class="fw-bold text-white mb-3">Quick Links</h6>
-					<ul class="list-unstyled">
-						<li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
-						<li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
-						<li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
-						<li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
-						<li><a href="contact.html" class="footer-link">Contact Us</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<h6 class="fw-bold text-white mb-3">Our Services</h6>
-					<ul class="list-unstyled">
-						<li class="mb-2"><span class="text-secondary">Graphic Designing</span></li>
-						<li class="mb-2"><span class="text-secondary">High Quality Printing</span></li>
-						<li class="mb-2"><span class="text-secondary">Pamphlet Distribution</span></li>
-						<li class="mb-2"><span class="text-secondary">Outdoor Advertising</span></li>
-						<li><span class="text-secondary">LED Sign Boards</span></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<h6 class="fw-bold text-white mb-3">Contact Info</h6>
-					<ul class="list-unstyled">
-						<li class="mb-2 text-secondary">
-							<i class="fa-solid fa-location-dot text-danger me-2"></i>
-							37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
-						</li>
-						<li class="mb-2">
-							<i class="fa-solid fa-phone text-danger me-2"></i>
-							<a href="tel:+919952760656" class="footer-link">099527 60656</a>
-						</li>
-						<li class="mb-2">
-							<i class="fa-solid fa-envelope text-danger me-2"></i>
-							<a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
-						</li>
-						<li>
-							<i class="fa-solid fa-clock text-danger me-2"></i>
-							<span class="text-secondary">Mon-Sat: 9AM - 9PM</span>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<hr class="border-secondary mt-4">
-			<div class="text-center">
-				<p class="text-secondary small mb-0">© 2026 <span class="text-white fw-bold">RK Graphics</span>. All Rights Reserved. | Hard Work... Never Fails...</p>
-				<p class="text-secondary small">Designed with <i class="fa-solid fa-heart text-danger"></i> in Arakkonam</p>
-			</div>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold text-white mb-3">
+                        <span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
+                        <span class="brand-text-graphics" style="color: #fff;">Graphics</span>
+                    </h5>
+                    <p class="text-secondary small">Hard Work... Never Fails...</p>
+                    <p class="text-secondary small mb-3">Complete Printing & Advertising Solutions since 2016.</p>
+                    <div>
+                        <a href="https://wa.me/919952760656" target="_blank" class="footer-social"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" class="footer-social"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="footer-social"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" target="_blank" class="footer-social"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
+                        <li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
+                        <li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Our Services</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><span class="text-secondary">Graphic Designing</span></li>
+                        <li class="mb-2"><span class="text-secondary">High Quality Printing</span></li>
+                        <li class="mb-2"><span class="text-secondary">Pamphlet Distribution</span></li>
+                        <li class="mb-2"><span class="text-secondary">Outdoor Advertising</span></li>
+                        <li><span class="text-secondary">LED Sign Boards</span></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h6 class="fw-bold text-white mb-3">Contact Info</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2 text-secondary">
+                            <i class="fa-solid fa-location-dot text-danger me-2"></i>
+                            37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa-solid fa-phone text-danger me-2"></i>
+                            <a href="tel:+919952760656" class="footer-link">099527 60656</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fa-solid fa-envelope text-danger me-2"></i>
+                            <a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-clock text-danger me-2"></i>
+                            <span class="text-secondary">Mon-Sat: 9AM - 9PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="border-secondary mt-4">
+            <div class="text-center">
+                <p class="text-secondary small mb-0">© 2026 <span class="text-white fw-bold">RK Graphics</span>. All Rights Reserved. | Hard Work... Never Fails...</p>
+                <p class="text-secondary small">Designed with <i class="fa-solid fa-heart text-danger"></i> in Arakkonam</p>
+            </div>
+        </div>
+    </footer>
 
-	<!-- WhatsApp -->
-	<div class="whatsapp-wrapper">
-		<a href="https://wa.me/919952760656?text=Hi%20RK%20Graphics!%20I%20want%20to%20know%20more%20about%20your%20products." target="_blank" class="whatsapp-float">
-			<i class="fab fa-whatsapp"></i>
-		</a>
-		<div class="whatsapp-tooltip">Chat with us on WhatsApp!</div>
-	</div>
+    <!-- WhatsApp -->
+    <div class="whatsapp-wrapper">
+        <a href="https://wa.me/919952760656?text=Hi%20RK%20Graphics!%20I%20want%20to%20know%20more%20about%20your%20products." target="_blank" class="whatsapp-float">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="whatsapp-tooltip">Chat with us on WhatsApp!</div>
+    </div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
