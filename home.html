@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>RK Graphics · vibrant multi-page</title>
+	<!-- Bootstrap 5 + Icons + Google Font -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
+	<style>
+		* {
+			font-family: 'Inter', sans-serif;
+		}
+
+		body {
+			background: #f5f7fb;
+		}
+		/* ---------- modern navbar ---------- */
+		.navbar {
+			background: rgba(255,255,255,0.85) !important;
+			backdrop-filter: blur(6px);
+			box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+		}
+
+		.navbar-brand {
+			font-weight: 700;
+			letter-spacing: -0.3px;
+		}
+
+		.brand-em {
+			color: #d32f2f;
+		}
+
+		.nav-link {
+			font-weight: 500;
+			color: #1e293b;
+			margin: 0 0.2rem;
+			border-radius: 0;
+			border-bottom: 3px solid transparent;
+			transition: 0.2s;
+		}
+
+			.nav-link:hover {
+				border-bottom-color: #d32f2f;
+				color: #0b1a2e;
+			}
+
+			.nav-link.active-tab {
+				font-weight: 600;
+				color: #d32f2f !important;
+				border-bottom-color: #d32f2f;
+			}
+
+		/* ---------- page sections ---------- */
+		.page-section {
+			display: none;
+		}
+
+			.page-section.active-page {
+				display: block;
+			}
+
+		/* ---------- banners (hero / colorful) ---------- */
+		.hero-banner {
+			background: linear-gradient(135deg, #0b1a2e 0%, #1f3a5f 50%, #2b4a7a 100%);
+			color: white;
+			border-radius: 2.5rem;
+			padding: 3.5rem 2rem 4rem;
+			margin-bottom: 2.8rem;
+			position: relative;
+			overflow: hidden;
+		}
+
+			.hero-banner::after {
+				content: "✦";
+				position: absolute;
+				right: -20px;
+				bottom: -40px;
+				font-size: 14rem;
+				opacity: 0.08;
+				color: white;
+				transform: rotate(12deg);
+			}
+
+			.hero-banner h1 {
+				font-weight: 700;
+				font-size: 3.2rem;
+			}
+
+			.hero-banner .lead {
+				font-weight: 300;
+				opacity: 0.9;
+			}
+
+		.color-banner {
+			background: linear-gradient(120deg, #f9e3b3 0%, #f5d0a9 100%);
+			border-radius: 2rem;
+			padding: 2rem 2rem;
+			margin: 2.5rem 0 2rem;
+			color: #2d2a1e;
+			box-shadow: 0 8px 28px rgba(211, 47, 47, 0.08);
+		}
+
+			.color-banner h3 {
+				font-weight: 700;
+			}
+
+		.accent-banner {
+			background: linear-gradient(145deg, #ffe6e6, #ffd9d9);
+			border-radius: 2rem;
+			padding: 1.8rem 2rem;
+			border-left: 8px solid #d32f2f;
+			margin: 2rem 0;
+		}
+
+		/* ---------- cards & items ---------- */
+		.service-card, .product-card, .gallery-item {
+			transition: 0.25s ease;
+			border: none;
+			background: white;
+			border-radius: 1.8rem;
+			overflow: hidden;
+			box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+			height: 100%;
+		}
+
+			.service-card:hover, .product-card:hover, .gallery-item:hover {
+				transform: translateY(-8px);
+				box-shadow: 0 18px 40px rgba(0,0,0,0.06);
+			}
+
+		.service-icon {
+			font-size: 2.8rem;
+			color: #d32f2f;
+		}
+
+		.badge-grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0.6rem 0.8rem;
+			justify-content: center;
+		}
+
+			.badge-grid .badge {
+				background: rgba(255,255,255,0.15);
+				color: white;
+				font-weight: 500;
+				padding: 0.5rem 1.2rem;
+				border-radius: 40px;
+				font-size: 0.85rem;
+				backdrop-filter: blur(4px);
+				border: 1px solid rgba(255,255,255,0.1);
+			}
+
+				.badge-grid .badge:hover {
+					background: rgba(255,255,255,0.25);
+				}
+
+		.section-title {
+			position: relative;
+			display: inline-block;
+			margin-bottom: 2.5rem;
+			font-weight: 700;
+		}
+
+			.section-title::after {
+				content: '';
+				position: absolute;
+				bottom: -12px;
+				left: 0;
+				width: 60px;
+				height: 5px;
+				background: #d32f2f;
+				border-radius: 8px;
+			}
+
+		.gallery-img {
+			width: 100%;
+			height: 210px;
+			object-fit: cover;
+			transition: 0.3s;
+		}
+
+		.gallery-item:hover .gallery-img {
+			transform: scale(1.02);
+		}
+
+		.product-card .card-body {
+			padding: 1.2rem 1.2rem 1.5rem;
+		}
+
+		.product-card .card-title {
+			font-weight: 600;
+		}
+
+		.contact-card {
+			background: white;
+			border-radius: 2rem;
+			padding: 2rem 2.5rem;
+			box-shadow: 0 8px 28px rgba(0,0,0,0.03);
+			height: 100%;
+		}
+
+		/* ---------- footer ---------- */
+		.footer {
+			background: #0b1a2e;
+			color: #b0c4d9;
+			padding: 2.8rem 0 1.8rem;
+			margin-top: 3.8rem;
+			border-radius: 2.5rem 2.5rem 0 0;
+		}
+
+			.footer a {
+				color: #b0c4d9;
+				text-decoration: none;
+			}
+
+				.footer a:hover {
+					color: white;
+					text-decoration: underline;
+				}
+
+		.btn-rk {
+			background: #d32f2f;
+			color: white;
+			border-radius: 60px;
+			padding: 0.6rem 2.2rem;
+			font-weight: 500;
+			border: none;
+		}
+
+			.btn-rk:hover {
+				background: #b71c1c;
+				color: white;
+			}
+
+		.btn-outline-rk {
+			border: 2px solid #d32f2f;
+			color: #d32f2f;
+			border-radius: 60px;
+			padding: 0.5rem 1.8rem;
+			font-weight: 500;
+			background: transparent;
+		}
+
+			.btn-outline-rk:hover {
+				background: #d32f2f;
+				color: white;
+			}
+
+		@media (max-width: 576px) {
+			.hero-banner h1 {
+				font-size: 2.2rem;
+			}
+
+			.contact-card {
+				padding: 1.5rem;
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<!-- NAV -->
+	<nav class="navbar navbar-expand-lg sticky-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">
+				<i class="bi bi-brush-fill text-danger me-2"></i>RK<span class="brand-em">Graphics</span>
+			</a>
+			<button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navMenu">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active-tab page-tab" data-page="home" href="#home">Home</a></li>
+					<li class="nav-item"><a class="nav-link page-tab" data-page="services" href="#services">Services</a></li>
+					<li class="nav-item"><a class="nav-link page-tab" data-page="products" href="#products">Products</a></li>
+					<li class="nav-item"><a class="nav-link page-tab" data-page="gallery" href="#gallery">Gallery</a></li>
+					<li class="nav-item"><a class="nav-link page-tab" data-page="contact" href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container my-4">
+
+		<!-- ========== HOME ========== -->
+		<div id="page-home" class="page-section active-page">
+			<!-- main hero banner -->
+			<div class="hero-banner text-center">
+				<div class="container">
+					<h1 class="display-4 fw-bold">MAD WORK · NEVERFALLS</h1>
+					<p class="lead fs-4 my-3">Graphics · FlexPrinting · Posters · Invitations · Calendars · Pamphlet · Stamp · PVC ID Cards · LED Sign · Envelope · Business Cards · Poly Bags · Photo Frame · Letterpad · Stickers · Keychain · Trophy · NamePlate</p>
+					<div class="badge-grid my-4">
+						<span class="badge">Graphics</span><span class="badge">FlexPrinting</span><span class="badge">Posters</span>
+						<span class="badge">Invitation</span><span class="badge">Calendars</span><span class="badge">Pamphlet</span>
+						<span class="badge">Stamp</span><span class="badge">PVC ID Cards</span><span class="badge">LED Sign</span>
+						<span class="badge">Envelope</span><span class="badge">Business Cards</span><span class="badge">Poly Bags</span>
+						<span class="badge">Photo Frame</span><span class="badge">Letterpad</span><span class="badge">Stickers</span>
+						<span class="badge">Keychain</span><span class="badge">Trophy</span><span class="badge">NamePlate</span>
+					</div>
+					<a href="#" class="btn btn-rk btn-lg mt-2 page-tab" data-page="contact">Get a quote</a>
+				</div>
+			</div>
+
+			<!-- colorful banner 1 -->
+			<div class="color-banner d-flex flex-wrap align-items-center justify-content-between">
+				<div>
+					<h3><i class="bi bi-stars text-danger me-2"></i> Premium Print & Design</h3>
+					<p class="mb-0">Custom solutions for every need – from flex to photo frames.</p>
+				</div>
+				<a href="#" class="btn btn-outline-rk page-tab" data-page="services">Explore →</a>
+			</div>
+
+			<!-- 3 service teasers -->
+			<div class="row g-4 mt-2">
+				<div class="col-md-4">
+					<div class="service-card p-4 text-center h-100">
+						<i class="bi bi-palette-fill service-icon"></i>
+						<h5 class="mt-3 fw-bold">Print & Design</h5>
+						<p class="text-secondary">High-quality flex, posters, invitation & more.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service-card p-4 text-center h-100">
+						<i class="bi bi-credit-card-2-front service-icon"></i>
+						<h5 class="mt-3 fw-bold">ID & PVC Cards</h5>
+						<p class="text-secondary">Durable PVC cards, stamps, name plates.</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service-card p-4 text-center h-100">
+						<i class="bi bi-box-seam service-icon"></i>
+						<h5 class="mt-3 fw-bold">Promo & Packaging</h5>
+						<p class="text-secondary">Poly bags, keychains, trophies, letterpads.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- accent banner -->
+			<div class="accent-banner mt-4 d-flex flex-wrap align-items-center justify-content-between">
+				<span><i class="bi bi-trophy-fill text-danger me-2"></i> <strong>Limited offer:</strong> free design consultation on orders above ₹2,500</span>
+				<a href="#" class="btn btn-rk btn-sm page-tab" data-page="contact">Claim now</a>
+			</div>
+		</div>
+
+		<!-- ========== SERVICES ========== -->
+		<div id="page-services" class="page-section">
+			<h2 class="section-title">Our Services</h2>
+			<div class="row g-4">
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-image service-icon"></i><h6 class="fw-bold">Graphics</h6><small class="text-secondary">Custom design & artwork</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-printer service-icon"></i><h6 class="fw-bold">Flex Printing</h6><small class="text-secondary">Banners, flex boards</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-card-image service-icon"></i><h6 class="fw-bold">Posters & Invitation</h6><small class="text-secondary">Event & wall posters</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-calendar-event service-icon"></i><h6 class="fw-bold">Calendars & Pamphlet</h6><small class="text-secondary">Yearly, desk calendars</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-stamp service-icon"></i><h6 class="fw-bold">Stamp & PVC Cards</h6><small class="text-secondary">Rubber stamps, ID cards</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-lightbulb service-icon"></i><h6 class="fw-bold">LED Sign</h6><small class="text-secondary">Illuminated signage</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-envelope service-icon"></i><h6 class="fw-bold">Envelope & Letterpad</h6><small class="text-secondary">Branded stationery</small></div></div>
+				<div class="col-md-4 col-lg-3"><div class="service-card p-4 text-center h-100"><i class="bi bi-award service-icon"></i><h6 class="fw-bold">Trophy & NamePlate</h6><small class="text-secondary">Awards, acrylic plates</small></div></div>
+			</div>
+			<!-- extra colorful banner inside services -->
+			<div class="color-banner mt-5 text-center">
+				<h4><i class="bi bi-megaphone-fill text-danger me-2"></i> 100% satisfaction guaranteed</h4>
+				<p class="mb-0">We deliver on time, every time.</p>
+			</div>
+		</div>
+
+		<!-- ========== PRODUCTS ========== -->
+		<div id="page-products" class="page-section">
+			<h2 class="section-title">Our Products</h2>
+			<div class="row g-4">
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/1a2f44/white?text=Posters" class="card-img-top gallery-img" alt="Posters"><div class="card-body"><h6 class="card-title">Posters</h6><p class="card-text small text-secondary">High-gloss, matte finish</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/2c3e50/white?text=Invitation" class="card-img-top gallery-img" alt="Invitation"><div class="card-body"><h6 class="card-title">Invitation Cards</h6><p class="card-text small text-secondary">Wedding, event, corporate</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/1a2f44/white?text=Calendars" class="card-img-top gallery-img" alt="Calendars"><div class="card-body"><h6 class="card-title">Calendars</h6><p class="card-text small text-secondary">Wall & desk calendars</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/2c3e50/white?text=PVC+ID" class="card-img-top gallery-img" alt="PVC ID"><div class="card-body"><h6 class="card-title">PVC ID Cards</h6><p class="card-text small text-secondary">Durable, full-color</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/1a2f44/white?text=LED+Sign" class="card-img-top gallery-img" alt="LED Sign"><div class="card-body"><h6 class="card-title">LED Signs</h6><p class="card-text small text-secondary">Indoor/outdoor</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/2c3e50/white?text=Poly+Bags" class="card-img-top gallery-img" alt="Poly Bags"><div class="card-body"><h6 class="card-title">Poly Bags</h6><p class="card-text small text-secondary">Custom printed</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/1a2f44/white?text=Keychain" class="card-img-top gallery-img" alt="Keychain"><div class="card-body"><h6 class="card-title">Keychains</h6><p class="card-text small text-secondary">Metal, acrylic</p></div></div>
+				</div>
+				<div class="col-sm-6 col-md-4 col-lg-3">
+					<div class="product-card"><img src="https://placehold.co/400x250/2c3e50/white?text=Trophy" class="card-img-top gallery-img" alt="Trophy"><div class="card-body"><h6 class="card-title">Trophy & NamePlate</h6><p class="card-text small text-secondary">Custom engraving</p></div></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- ========== GALLERY ========== -->
+		<div id="page-gallery" class="page-section">
+			<h2 class="section-title">Gallery</h2>
+			<!-- gallery with real images (placehold with labels) -->
+			<div class="row g-3">
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/0b1a2e/white?text=Graphics+Design" class="gallery-img" alt="Graphics"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/1a2f44/white?text=Flex+Printing" class="gallery-img" alt="Flex"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/2c3e50/white?text=Posters+%26+Invitation" class="gallery-img" alt="Posters"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/1a2f44/white?text=Calendars" class="gallery-img" alt="Calendars"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/0b1a2e/white?text=PVC+ID+Cards" class="gallery-img" alt="PVC"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/2c3e50/white?text=LED+Signs" class="gallery-img" alt="LED"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/1a2f44/white?text=Trophy+%26+NamePlate" class="gallery-img" alt="Trophy"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/0b1a2e/white?text=Keychain+%26+Stickers" class="gallery-img" alt="Keychain"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/2c3e50/white?text=Poly+Bags" class="gallery-img" alt="Poly Bags"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/1a2f44/white?text=Photo+Frame" class="gallery-img" alt="Photo Frame"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/0b1a2e/white?text=Letterpad" class="gallery-img" alt="Letterpad"></div></div>
+				<div class="col-6 col-md-4 col-lg-3"><div class="gallery-item"><img src="https://placehold.co/600x400/2c3e50/white?text=Envelope" class="gallery-img" alt="Envelope"></div></div>
+			</div>
+		</div>
+
+		<!-- ========== CONTACT ========== -->
+		<div id="page-contact" class="page-section">
+			<h2 class="section-title">Contact</h2>
+			<div class="row g-4">
+				<div class="col-lg-6">
+					<div class="contact-card">
+						<h5><i class="bi bi-geo-alt text-danger me-2"></i> RK Graphics</h5>
+						<p class="text-secondary">123, Print Street,<br />Chennai - 600 001</p>
+						<ul class="list-unstyled">
+							<li><i class="bi bi-telephone-fill text-danger me-2"></i> +91 98765 43210</li>
+							<li><i class="bi bi-envelope-fill text-danger me-2"></i> info@rkgraphics.co.in</li>
+							<li><i class="bi bi-clock text-danger me-2"></i> Mon–Sat 10:00 – 19:00</li>
+						</ul>
+						<hr />
+						<p class="small text-secondary">
+							Follow us:
+							<a href="#" class="text-danger me-2"><i class="bi bi-instagram"></i></a>
+							<a href="#" class="text-danger me-2"><i class="bi bi-facebook"></i></a>
+							<a href="#" class="text-danger"><i class="bi bi-whatsapp"></i></a>
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="contact-card">
+						<h5>Send a message</h5>
+						<form>
+							<div class="mb-3"><input type="text" class="form-control" placeholder="Your name" /></div>
+							<div class="mb-3"><input type="email" class="form-control" placeholder="Email address" /></div>
+							<div class="mb-3"><textarea class="form-control" rows="3" placeholder="Tell us about your project..."></textarea></div>
+							<button class="btn btn-rk w-100">Send <i class="bi bi-arrow-right"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ========== FOOTER ========== -->
+	<footer class="footer">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-md-6">
+					<span class="fw-bold text-white">RK Graphics</span>
+					<span class="small">· MAD WORK NEVERFALLS</span>
+					<p class="small mt-1">Graphics · Flex · Posters · Invitation · Calendars · Pamphlet · Stamp · PVC · LED · Envelope · Business Cards · Poly Bags · Photo Frame · Letterpad · Stickers · Keychain · Trophy · NamePlate</p>
+				</div>
+				<div class="col-md-6 text-md-end">
+					<a href="#" class="page-tab me-3" data-page="home">Home</a>
+					<a href="#" class="page-tab me-3" data-page="services">Services</a>
+					<a href="#" class="page-tab me-3" data-page="products">Products</a>
+					<a href="#" class="page-tab me-3" data-page="gallery">Gallery</a>
+					<a href="#" class="page-tab" data-page="contact">Contact</a>
+					<div class="small mt-2 text-secondary">© 2026 RK Graphics — inspired by signstar.co.in</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		(function () {
+			const pages = {
+				home: document.getElementById('page-home'),
+				services: document.getElementById('page-services'),
+				products: document.getElementById('page-products'),
+				gallery: document.getElementById('page-gallery'),
+				contact: document.getElementById('page-contact')
+			};
+			const navLinks = document.querySelectorAll('.page-tab');
+
+			function switchPage(pageId) {
+				Object.values(pages).forEach(p => p.classList.remove('active-page'));
+				if (pages[pageId]) pages[pageId].classList.add('active-page');
+				navLinks.forEach(link => {
+					link.classList.remove('active-tab');
+					if (link.dataset.page === pageId) link.classList.add('active-tab');
+				});
+				window.scrollTo({ top: 0, behavior: 'smooth' });
+			}
+
+			navLinks.forEach(link => {
+				link.addEventListener('click', function (e) {
+					e.preventDefault();
+					const page = this.dataset.page;
+					if (page && pages[page]) switchPage(page);
+				});
+			});
+
+			// set default active
+			const homeLink = document.querySelector('.page-tab[data-page="home"]');
+			if (homeLink) homeLink.classList.add('active-tab');
+		})();
+	</script>
+</body>
+</html>
