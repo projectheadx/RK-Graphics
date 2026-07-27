@@ -163,22 +163,6 @@
 				transform: translateY(-3px);
 			}
 
-		.stats-section {
-			background: #f8f9fa;
-			padding: 30px 0;
-		}
-
-			.stats-section .stat-number {
-				font-size: 2.5rem;
-				font-weight: 800;
-				color: var(--brand-pink);
-			}
-
-			.stats-section .stat-label {
-				font-weight: 600;
-				color: var(--brand-blue);
-			}
-
 		.form-control, .form-select {
 			border-radius: 10px;
 			padding: 12px 15px;
@@ -275,36 +259,133 @@
 			display: block;
 		}
 
-		.footer-link {
-			color: rgba(255,255,255,0.7);
-			text-decoration: none;
-			transition: color 0.3s;
+		/* ===== FOOTER STYLES ===== */
+		.footer {
+			background: #0b1a2e;
+			color: #fff;
+			padding-top: 60px;
+			padding-bottom: 30px;
 		}
 
-			.footer-link:hover {
+			.footer .brand-text-rk {
 				color: var(--brand-pink);
+				font-weight: 800;
+				font-size: 1.8rem;
 			}
 
-		.footer-social {
-			display: inline-block;
-			width: 38px;
-			height: 38px;
-			border-radius: 50%;
-			background: rgba(255,255,255,0.1);
-			text-align: center;
-			line-height: 38px;
-			color: white;
-			transition: all 0.3s;
-			margin: 0 5px;
-		}
+			.footer .brand-text-graphics {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.8rem;
+			}
 
-			.footer-social:hover {
+			.footer .footer-tagline {
+				color: rgba(255,255,255,0.6);
+				font-size: 0.95rem;
+				letter-spacing: 0.5px;
+				margin-top: 8px;
+			}
+
+			.footer .footer-divider {
+				width: 50px;
+				height: 3px;
 				background: var(--brand-pink);
-				color: white;
-				transform: translateY(-3px);
+				margin: 16px 0 18px;
+				border-radius: 4px;
 			}
 
-		/* Responsive */
+			.footer .footer-about-text {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				line-height: 1.8;
+				max-width: 400px;
+			}
+
+			.footer .footer-social-icon {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.08);
+				text-align: center;
+				line-height: 40px;
+				color: #fff;
+				transition: all 0.3s ease;
+				margin-right: 8px;
+				font-size: 1.1rem;
+				text-decoration: none;
+			}
+
+				.footer .footer-social-icon:hover {
+					background: var(--brand-pink);
+					color: #fff;
+					transform: translateY(-3px);
+				}
+
+			.footer .footer-heading {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.1rem;
+				margin-bottom: 20px;
+				letter-spacing: 0.5px;
+			}
+
+			.footer .footer-link {
+				color: rgba(255,255,255,0.6);
+				text-decoration: none;
+				transition: color 0.3s ease;
+				font-size: 0.95rem;
+			}
+
+				.footer .footer-link:hover {
+					color: var(--brand-pink);
+				}
+
+			.footer .footer-contact-item {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				margin-bottom: 12px;
+				display: flex;
+				align-items: flex-start;
+				gap: 10px;
+			}
+
+				.footer .footer-contact-item i {
+					color: var(--brand-pink);
+					width: 20px;
+					margin-top: 4px;
+					flex-shrink: 0;
+				}
+
+				.footer .footer-contact-item a {
+					color: rgba(255,255,255,0.7);
+					text-decoration: none;
+					transition: color 0.3s;
+				}
+
+					.footer .footer-contact-item a:hover {
+						color: var(--brand-pink);
+					}
+
+			.footer .footer-bottom {
+				border-top: 1px solid rgba(255,255,255,0.08);
+				padding-top: 25px;
+				margin-top: 40px;
+			}
+
+			.footer .footer-bottom-text {
+				color: rgba(255,255,255,0.5);
+				font-size: 0.9rem;
+			}
+
+				.footer .footer-bottom-text .heart {
+					color: var(--brand-pink);
+				}
+
+				.footer .footer-bottom-text strong {
+					color: #fff;
+				}
+
 		@media (max-width: 768px) {
 			.page-header {
 				padding: 50px 0;
@@ -314,6 +395,10 @@
 				.page-header h1 {
 					font-size: 2rem;
 				}
+
+			.footer .footer-about-text {
+				max-width: 100%;
+			}
 		}
 	</style>
 </head>
@@ -354,30 +439,11 @@
 	<section class="page-header text-center">
 		<div class="container">
 			<h1 class="fw-bold display-4">Contact Us</h1>
-			<p class="lead fs-4">Get in touch for instant quotes & inquiries</p>
-			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">We're Here to Help!</span></p>
+			<p class="lead fs-4">Let's Print Something Amazing Together</p>
+			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">Need premium printing services?</span></p>
 		</div>
 	</section>
 
-	<!-- Stats -->
-	<!--<section class="stats-section border-bottom">
-		<div class="container">
-			<div class="row text-center g-3">
-				<div class="col-4">
-					<div class="stat-number">10+</div>
-					<div class="stat-label">Years Experience</div>
-				</div>
-				<div class="col-4">
-					<div class="stat-number">17+</div>
-					<div class="stat-label">Products</div>
-				</div>
-				<div class="col-4">
-					<div class="stat-number">1000+</div>
-					<div class="stat-label">Happy Clients</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
 	<!-- Contact Section -->
 	<section class="py-5">
 		<div class="container">
@@ -395,8 +461,8 @@
 						<div class="col-md-6 col-lg-12">
 							<div class="contact-info-card">
 								<div class="icon-circle"><i class="fa-solid fa-phone"></i></div>
-								<h6>Phone Number</h6>
-								<p><a href="tel:+919952760656" class="text-decoration-none" style="color: var(--brand-pink);">099527 60656</a></p>
+								<h6>Phone / WhatsApp</h6>
+								<p><a href="tel:+919952760656" class="text-decoration-none" style="color: var(--brand-pink);">+91 99527 60656</a></p>
 								<a href="tel:+919952760656" class="btn btn-brand btn-sm">Call Now</a>
 							</div>
 						</div>
@@ -411,8 +477,8 @@
 						<div class="col-md-6 col-lg-12">
 							<div class="contact-info-card">
 								<div class="icon-circle"><i class="fa-solid fa-clock"></i></div>
-								<h6>Working Hours</h6>
-								<p>Mon - Sat: 9:00 AM - 9:00 PM<br>Sunday: Closed</p>
+								<h6>Business Hours</h6>
+								<p><strong>Monday – Saturday</strong><br>9:00 AM – 8:00 PM</p>
 							</div>
 						</div>
 					</div>
@@ -422,8 +488,9 @@
 				<div class="col-lg-7">
 					<div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
 						<h3 class="fw-bold mb-4" style="color: var(--brand-blue);">
-							<i class="fa-solid fa-paper-plane text-danger me-2"></i>Send Message / Request Quote
+							<i class="fa-solid fa-paper-plane text-danger me-2"></i>Send Us Your Enquiry
 						</h3>
+						<p class="text-muted mb-4">Fill out the contact form and our team will get back to you as soon as possible.</p>
 						<form>
 							<div class="row g-3">
 								<div class="col-md-6">
@@ -502,14 +569,14 @@
 				<h2 style="color: var(--brand-blue);">Need Immediate Assistance?</h2>
 				<p class="text-muted mb-4">Call us directly for urgent printing and design requirements</p>
 				<a href="tel:+919952760656" class="btn btn-brand btn-lg">
-					<i class="fa-solid fa-phone me-2"></i> Call Now: 099527 60656
+					<i class="fa-solid fa-phone me-2"></i> Call Now: +91 99527 60656
 				</a>
 			</div>
 		</div>
 	</section>
 
 	<!-- ============================================================ -->
-	<!-- ===== UPDATED FOOTER AS PER IMAGE ===== -->
+	<!-- ===== UPDATED FOOTER ===== -->
 	<!-- ============================================================ -->
 	<footer class="footer">
 		<div class="container">
@@ -520,7 +587,7 @@
 						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
 						<span class="brand-text-graphics">Graphics</span>
 					</div>
-					<p class="footer-tagline mt-2">Premium Digital Printing | Graphic Design | Branding Solutions</p>
+					<p class="footer-tagline">Premium Digital Printing | Graphic Design | Branding Solutions</p>
 					<div class="footer-divider"></div>
 					<p class="footer-about-text">
 						Print Beyond Expectations. Serving Businesses Across Tamil Nadu with high-quality printing & branding solutions.
@@ -538,7 +605,7 @@
 					<h6 class="footer-heading">Quick Links</h6>
 					<ul class="list-unstyled">
 						<li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
-						<li class="mb-2"><a href="about.html" class="footer-link">About Us</a></li>
+						<li class="mb-2"><a href="aboutus.html" class="footer-link">About Us</a></li>
 						<li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
 						<li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
 						<li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
@@ -563,19 +630,19 @@
 					<h6 class="footer-heading">Contact Info</h6>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-location-dot"></i>
-						37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
+						<span>37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001</span>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-phone"></i>
-						<a href="tel:+919952760656" class="footer-link">099527 60656</a>
+						<a href="tel:+919952760656">+91 99527 60656</a>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-envelope"></i>
-						<a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
+						<a href="mailto:rkgraphics@gmail.com">rkgraphics@gmail.com</a>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-clock"></i>
-						Mon-Sat: 9AM - 9PM
+						<span>Mon-Sat: 9AM - 9PM</span>
 					</div>
 				</div>
 			</div>
@@ -585,7 +652,7 @@
 				<div class="row align-items-center">
 					<div class="col-md-6 text-center text-md-start">
 						<span class="footer-bottom-text">
-							© 2026 <strong class="text-white">RK Graphics</strong>. All Rights Reserved.
+							© 2026 <strong>RK Graphics</strong>. All Rights Reserved.
 						</span>
 					</div>
 					<div class="col-md-6 text-center text-md-end">
