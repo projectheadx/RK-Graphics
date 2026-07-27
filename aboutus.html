@@ -12,6 +12,7 @@
 		:root {
 			--brand-pink: #e91e63;
 			--brand-blue: #1e3c72;
+			--whatsapp-green: #25D366;
 		}
 
 		body {
@@ -180,6 +181,17 @@
 				margin-top: 5px;
 			}
 
+		.badge-custom {
+			background-color: rgba(233, 30, 99, 0.08);
+			color: var(--brand-pink);
+			font-size: 0.85rem;
+			padding: 6px 16px;
+			border-radius: 20px;
+			display: inline-block;
+			font-weight: 600;
+			border: 1px solid rgba(233, 30, 99, 0.2);
+		}
+
 		/* ===== MISSION & VISION ===== */
 		.mission-vision {
 			background: #f8f9fc;
@@ -255,37 +267,112 @@
 				color: #666;
 			}
 
-		/* ===== FOOTER ===== */
-		.footer-link {
-			color: rgba(255,255,255,0.7);
-			text-decoration: none;
-			transition: color 0.3s;
-		}
-
-			.footer-link:hover {
-				color: var(--brand-pink);
-			}
-
-		.footer-social {
-			display: inline-block;
-			width: 38px;
-			height: 38px;
-			border-radius: 50%;
-			background: rgba(255,255,255,0.1);
-			text-align: center;
-			line-height: 38px;
+		/* ===== FOOTER - UPDATED AS PER IMAGE ===== */
+		.footer {
+			background: #0b1a2e;
 			color: white;
-			transition: all 0.3s;
-			margin: 0 5px;
+			padding-top: 60px;
+			padding-bottom: 30px;
 		}
 
-			.footer-social:hover {
-				background: var(--brand-pink);
-				color: white;
-				transform: translateY(-3px);
+			.footer .brand-text-rk {
+				color: var(--brand-pink);
+				font-weight: 800;
+				font-size: 1.8rem;
 			}
 
-		/* ===== RESPONSIVE ===== */
+			.footer .brand-text-graphics {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.8rem;
+			}
+
+			.footer .footer-tagline {
+				color: rgba(255,255,255,0.6);
+				font-size: 0.95rem;
+				letter-spacing: 0.5px;
+			}
+
+			.footer .footer-divider {
+				width: 60px;
+				height: 3px;
+				background: var(--brand-pink);
+				margin: 18px 0 20px;
+				border-radius: 4px;
+			}
+
+			.footer .footer-about-text {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				line-height: 1.7;
+				max-width: 400px;
+			}
+
+			.footer .footer-social-icon {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.08);
+				text-align: center;
+				line-height: 40px;
+				color: white;
+				transition: all 0.3s;
+				margin-right: 8px;
+				font-size: 1.1rem;
+			}
+
+				.footer .footer-social-icon:hover {
+					background: var(--brand-pink);
+					color: white;
+					transform: translateY(-3px);
+				}
+
+			.footer .footer-heading {
+				color: white;
+				font-weight: 700;
+				font-size: 1.1rem;
+				margin-bottom: 20px;
+				letter-spacing: 0.5px;
+			}
+
+			.footer .footer-link {
+				color: rgba(255,255,255,0.6);
+				text-decoration: none;
+				transition: color 0.3s;
+				font-size: 0.95rem;
+			}
+
+				.footer .footer-link:hover {
+					color: var(--brand-pink);
+				}
+
+			.footer .footer-contact-item {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				margin-bottom: 12px;
+			}
+
+				.footer .footer-contact-item i {
+					color: var(--brand-pink);
+					width: 24px;
+				}
+
+			.footer .footer-bottom {
+				border-top: 1px solid rgba(255,255,255,0.08);
+				padding-top: 25px;
+				margin-top: 40px;
+			}
+
+			.footer .footer-bottom-text {
+				color: rgba(255,255,255,0.5);
+				font-size: 0.9rem;
+			}
+
+				.footer .footer-bottom-text .heart {
+					color: var(--brand-pink);
+				}
+
 		@media (max-width: 768px) {
 			.about-hero h1 {
 				font-size: 2.2rem;
@@ -297,6 +384,10 @@
 
 			.about-content h2 {
 				font-size: 1.8rem;
+			}
+
+			.footer .footer-about-text {
+				max-width: 100%;
 			}
 		}
 	</style>
@@ -375,7 +466,7 @@
 						We take pride in our customer-centric approach, ensuring every project is delivered on time and within budget. Our team of experienced designers and printing professionals work closely with you from concept to completion.
 					</p>
 					<div class="mt-4">
-						<div class="d-flex flex-wrap gap-3">
+						<div class="d-flex flex-wrap gap-2">
 							<span class="badge-custom"><i class="fa-regular fa-circle-check me-1"></i> 10+ Years Experience</span>
 							<span class="badge-custom"><i class="fa-regular fa-circle-check me-1"></i> 250+ Happy Clients</span>
 							<span class="badge-custom"><i class="fa-regular fa-circle-check me-1"></i> 17+ Product Categories</span>
@@ -530,74 +621,92 @@
 		</div>
 	</section>
 
-	<!-- ===== FOOTER ===== -->
-	<footer class="bg-dark text-white pt-5 pb-4">
+	<!-- ============================================================ -->
+	<!-- ===== UPDATED FOOTER AS PER IMAGE ===== -->
+	<!-- ============================================================ -->
+	<footer class="footer">
 		<div class="container">
-			<div class="row g-4">
+			<div class="row g-5">
+				<!-- Brand Column -->
 				<div class="col-lg-4 col-md-6">
-					<h5 class="fw-bold text-white mb-3">
-						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
-						<span class="brand-text-graphics" style="color: #fff;">Graphics</span>
-					</h5>
-					<p class="text-secondary small">Hard Work... Never Fails...</p>
-					<p class="text-secondary small mb-3">Complete Printing & Advertising Solutions since 2016.</p>
 					<div>
-						<a href="https://wa.me/919952760656" target="_blank" class="footer-social"><i class="fab fa-whatsapp"></i></a>
-						<a href="#" target="_blank" class="footer-social"><i class="fab fa-instagram"></i></a>
-						<a href="#" target="_blank" class="footer-social"><i class="fab fa-facebook-f"></i></a>
-						<a href="#" target="_blank" class="footer-social"><i class="fab fa-youtube"></i></a>
+						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
+						<span class="brand-text-graphics">Graphics</span>
+					</div>
+					<p class="footer-tagline mt-2">Premium Digital Printing | Graphic Design | Branding Solutions</p>
+					<div class="footer-divider"></div>
+					<p class="footer-about-text">
+						Print Beyond Expectations. Serving Businesses Across Tamil Nadu with high-quality printing & branding solutions.
+					</p>
+					<div class="mt-3">
+						<a href="#" class="footer-social-icon"><i class="fab fa-facebook-f"></i></a>
+						<a href="#" class="footer-social-icon"><i class="fab fa-instagram"></i></a>
+						<a href="#" class="footer-social-icon"><i class="fab fa-youtube"></i></a>
+						<a href="https://wa.me/919952760656" target="_blank" class="footer-social-icon"><i class="fab fa-whatsapp"></i></a>
 					</div>
 				</div>
 
+				<!-- Quick Links -->
 				<div class="col-lg-2 col-md-6">
-					<h6 class="fw-bold text-white mb-3">Quick Links</h6>
+					<h6 class="footer-heading">Quick Links</h6>
 					<ul class="list-unstyled">
 						<li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
 						<li class="mb-2"><a href="about.html" class="footer-link">About Us</a></li>
 						<li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
 						<li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
+						<li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
 						<li><a href="contact.html" class="footer-link">Contact Us</a></li>
 					</ul>
 				</div>
 
+				<!-- Services -->
 				<div class="col-lg-3 col-md-6">
-					<h6 class="fw-bold text-white mb-3">Our Services</h6>
+					<h6 class="footer-heading">Our Services</h6>
 					<ul class="list-unstyled">
-						<li class="mb-2"><span class="text-secondary">Graphic Designing</span></li>
-						<li class="mb-2"><span class="text-secondary">High Quality Printing</span></li>
-						<li class="mb-2"><span class="text-secondary">Pamphlet Distribution</span></li>
-						<li class="mb-2"><span class="text-secondary">Outdoor Advertising</span></li>
-						<li><span class="text-secondary">LED Sign Boards</span></li>
+						<li class="mb-2"><a href="#" class="footer-link">Graphic Designing</a></li>
+						<li class="mb-2"><a href="#" class="footer-link">Digital Printing</a></li>
+						<li class="mb-2"><a href="#" class="footer-link">Product Branding</a></li>
+						<li class="mb-2"><a href="#" class="footer-link">Promotional Materials</a></li>
+						<li><a href="#" class="footer-link">Commercial Printing</a></li>
 					</ul>
 				</div>
 
+				<!-- Contact -->
 				<div class="col-lg-3 col-md-6">
-					<h6 class="fw-bold text-white mb-3">Contact Info</h6>
-					<ul class="list-unstyled">
-						<li class="mb-2 text-secondary">
-							<i class="fa-solid fa-location-dot text-danger me-2"></i>
-							37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
-						</li>
-						<li class="mb-2">
-							<i class="fa-solid fa-phone text-danger me-2"></i>
-							<a href="tel:+919952760656" class="footer-link">099527 60656</a>
-						</li>
-						<li class="mb-2">
-							<i class="fa-solid fa-envelope text-danger me-2"></i>
-							<a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
-						</li>
-						<li>
-							<i class="fa-solid fa-clock text-danger me-2"></i>
-							<span class="text-secondary">Mon-Sat: 9AM - 9PM</span>
-						</li>
-					</ul>
+					<h6 class="footer-heading">Contact Info</h6>
+					<div class="footer-contact-item">
+						<i class="fa-solid fa-location-dot"></i>
+						37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
+					</div>
+					<div class="footer-contact-item">
+						<i class="fa-solid fa-phone"></i>
+						<a href="tel:+919952760656" class="footer-link">099527 60656</a>
+					</div>
+					<div class="footer-contact-item">
+						<i class="fa-solid fa-envelope"></i>
+						<a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
+					</div>
+					<div class="footer-contact-item">
+						<i class="fa-solid fa-clock"></i>
+						Mon-Sat: 9AM - 9PM
+					</div>
 				</div>
 			</div>
 
-			<hr class="border-secondary mt-4">
-			<div class="text-center">
-				<p class="text-secondary small mb-0">© 2026 <span class="text-white fw-bold">RK Graphics</span>. All Rights Reserved. | Hard Work... Never Fails...</p>
-				<p class="text-secondary small">Designed with <i class="fa-solid fa-heart text-danger"></i> in Arakkonam</p>
+			<!-- Bottom Bar -->
+			<div class="footer-bottom">
+				<div class="row align-items-center">
+					<div class="col-md-6 text-center text-md-start">
+						<span class="footer-bottom-text">
+							© 2026 <strong class="text-white">RK Graphics</strong>. All Rights Reserved.
+						</span>
+					</div>
+					<div class="col-md-6 text-center text-md-end">
+						<span class="footer-bottom-text">
+							Made with <i class="fa-solid fa-heart heart"></i> in Arakkonam
+						</span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>
@@ -605,4 +714,3 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-```
