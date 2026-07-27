@@ -162,22 +162,6 @@
 			color: var(--brand-blue);
 		}
 
-		.stats-section {
-			background: #f8f9fa;
-			padding: 30px 0;
-		}
-
-			.stats-section .stat-number {
-				font-size: 2.5rem;
-				font-weight: 800;
-				color: var(--brand-pink);
-			}
-
-			.stats-section .stat-label {
-				font-weight: 600;
-				color: var(--brand-blue);
-			}
-
 		.whatsapp-wrapper {
 			position: fixed;
 			bottom: 30px;
@@ -251,36 +235,133 @@
 			display: block;
 		}
 
-		.footer-link {
-			color: rgba(255,255,255,0.7);
-			text-decoration: none;
-			transition: color 0.3s;
+		/* ===== FOOTER STYLES ===== */
+		.footer {
+			background: #0b1a2e;
+			color: #fff;
+			padding-top: 60px;
+			padding-bottom: 30px;
 		}
 
-			.footer-link:hover {
+			.footer .brand-text-rk {
 				color: var(--brand-pink);
+				font-weight: 800;
+				font-size: 1.8rem;
 			}
 
-		.footer-social {
-			display: inline-block;
-			width: 38px;
-			height: 38px;
-			border-radius: 50%;
-			background: rgba(255,255,255,0.1);
-			text-align: center;
-			line-height: 38px;
-			color: white;
-			transition: all 0.3s;
-			margin: 0 5px;
-		}
+			.footer .brand-text-graphics {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.8rem;
+			}
 
-			.footer-social:hover {
+			.footer .footer-tagline {
+				color: rgba(255,255,255,0.6);
+				font-size: 0.95rem;
+				letter-spacing: 0.5px;
+				margin-top: 8px;
+			}
+
+			.footer .footer-divider {
+				width: 50px;
+				height: 3px;
 				background: var(--brand-pink);
-				color: white;
-				transform: translateY(-3px);
+				margin: 16px 0 18px;
+				border-radius: 4px;
 			}
 
-		/* Responsive */
+			.footer .footer-about-text {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				line-height: 1.8;
+				max-width: 400px;
+			}
+
+			.footer .footer-social-icon {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.08);
+				text-align: center;
+				line-height: 40px;
+				color: #fff;
+				transition: all 0.3s ease;
+				margin-right: 8px;
+				font-size: 1.1rem;
+				text-decoration: none;
+			}
+
+				.footer .footer-social-icon:hover {
+					background: var(--brand-pink);
+					color: #fff;
+					transform: translateY(-3px);
+				}
+
+			.footer .footer-heading {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.1rem;
+				margin-bottom: 20px;
+				letter-spacing: 0.5px;
+			}
+
+			.footer .footer-link {
+				color: rgba(255,255,255,0.6);
+				text-decoration: none;
+				transition: color 0.3s ease;
+				font-size: 0.95rem;
+			}
+
+				.footer .footer-link:hover {
+					color: var(--brand-pink);
+				}
+
+			.footer .footer-contact-item {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				margin-bottom: 12px;
+				display: flex;
+				align-items: flex-start;
+				gap: 10px;
+			}
+
+				.footer .footer-contact-item i {
+					color: var(--brand-pink);
+					width: 20px;
+					margin-top: 4px;
+					flex-shrink: 0;
+				}
+
+				.footer .footer-contact-item a {
+					color: rgba(255,255,255,0.7);
+					text-decoration: none;
+					transition: color 0.3s;
+				}
+
+					.footer .footer-contact-item a:hover {
+						color: var(--brand-pink);
+					}
+
+			.footer .footer-bottom {
+				border-top: 1px solid rgba(255,255,255,0.08);
+				padding-top: 25px;
+				margin-top: 40px;
+			}
+
+			.footer .footer-bottom-text {
+				color: rgba(255,255,255,0.5);
+				font-size: 0.9rem;
+			}
+
+				.footer .footer-bottom-text .heart {
+					color: var(--brand-pink);
+				}
+
+				.footer .footer-bottom-text strong {
+					color: #fff;
+				}
+
 		@media (max-width: 768px) {
 			.page-header {
 				padding: 50px 0;
@@ -290,6 +371,10 @@
 				.page-header h1 {
 					font-size: 2rem;
 				}
+
+			.footer .footer-about-text {
+				max-width: 100%;
+			}
 		}
 	</style>
 </head>
@@ -329,31 +414,12 @@
 	<!-- ===== PAGE HEADER WITH BACKGROUND IMAGE ===== -->
 	<section class="page-header text-center">
 		<div class="container">
-			<h1 class="fw-bold display-4">Our Project Gallery</h1>
-			<p class="lead fs-4">Explore our recent print jobs, LED sign board installations, and custom items</p>
-			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">12+ Projects</span></p>
+			<h1 class="fw-bold display-4">Explore Our Work</h1>
+			<p class="lead fs-4">Browse our gallery to see the quality, creativity, and precision behind every project.</p>
+			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">From small business printing to large commercial branding</span></p>
 		</div>
 	</section>
 
-	<!-- Stats -->
-	<!--<section class="stats-section border-bottom">
-		<div class="container">
-			<div class="row text-center g-3">
-				<div class="col-4">
-					<div class="stat-number">12+</div>
-					<div class="stat-label">Projects</div>
-				</div>
-				<div class="col-4">
-					<div class="stat-number">5+</div>
-					<div class="stat-label">Categories</div>
-				</div>
-				<div class="col-4">
-					<div class="stat-number">100+</div>
-					<div class="stat-label">Happy Clients</div>
-				</div>
-			</div>
-		</div>
-	</section>-->
 	<!-- Filter -->
 	<section class="py-4 bg-white border-bottom">
 		<div class="container text-center">
@@ -369,6 +435,7 @@
 	<section class="py-5">
 		<div class="container">
 			<div class="row g-4" id="galleryGrid">
+				<!-- LED Signs -->
 				<div class="col-md-6 col-lg-4 gallery-item led">
 					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80', '3D Acrylic LED Glow Sign Board')">
 						<img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80" alt="LED Board">
@@ -376,56 +443,6 @@
 						<div class="p-3 text-center">
 							<h5 class="gallery-title mb-0">3D Acrylic LED Glow Sign Board</h5>
 							<span class="badge bg-danger mt-2">LED Signs</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 gallery-item cards">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80', 'Premium Matt Finish Visiting Cards')">
-						<img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80" alt="Visiting Cards">
-						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">Premium Matt Finish Visiting Cards</h5>
-							<span class="badge bg-primary mt-2">Cards & Stationery</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 gallery-item flex">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80', 'Outdoor Event Flex Banner')">
-						<img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80" alt="Flex Printing">
-						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">High-HD Outdoor Event Flex Banner</h5>
-							<span class="badge bg-success mt-2">Flex & Banners</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 gallery-item gifts">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80', 'Customized Corporate Awards & Trophies')">
-						<img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Trophy">
-						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">Customized Corporate Trophies</h5>
-							<span class="badge bg-warning text-dark mt-2">Custom Gifts</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 gallery-item cards">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80', 'Company Employee PVC ID Cards')">
-						<img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="PVC ID Card">
-						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">Company Employee PVC ID Cards</h5>
-							<span class="badge bg-primary mt-2">Cards & Stationery</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 gallery-item gifts">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=800&q=80', 'Custom Printed Keychains & Photo Frames')">
-						<img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=800&q=80" alt="Gifts">
-						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">Custom Printed Keychains & Frames</h5>
-							<span class="badge bg-warning text-dark mt-2">Custom Gifts</span>
 						</div>
 					</div>
 				</div>
@@ -439,33 +456,35 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-4 gallery-item flex">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1551269901-6e84f23543e6?auto=format&fit=crop&w=800&q=80', 'Corporate Event Posters')">
-						<img src="https://images.unsplash.com/photo-1551269901-6e84f23543e6?auto=format&fit=crop&w=800&q=80" alt="Posters">
+
+				<!-- Cards & Stationery -->
+				<div class="col-md-6 col-lg-4 gallery-item cards">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80', 'Premium Matt Finish Visiting Cards')">
+						<img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=800&q=80" alt="Visiting Cards">
 						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
 						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">Corporate Event Posters</h5>
-							<span class="badge bg-success mt-2">Flex & Banners</span>
+							<h5 class="gallery-title mb-0">Premium Matt Finish Visiting Cards</h5>
+							<span class="badge bg-primary mt-2">Cards & Stationery</span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-4 gallery-item cards">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80', 'Wedding Invitation Cards')">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80', 'Company Employee PVC ID Cards')">
+						<img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="PVC ID Card">
+						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+						<div class="p-3 text-center">
+							<h5 class="gallery-title mb-0">Company Employee PVC ID Cards</h5>
+							<span class="badge bg-primary mt-2">Cards & Stationery</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 gallery-item cards">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80', 'Premium Wedding Invitation Cards')">
 						<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80" alt="Invitation">
 						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
 						<div class="p-3 text-center">
 							<h5 class="gallery-title mb-0">Premium Wedding Invitation Cards</h5>
 							<span class="badge bg-primary mt-2">Cards & Stationery</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-4 gallery-item gifts">
-					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1589308453153-e1e5137e14d5?auto=format&fit=crop&w=800&q=80', 'Acrylic Office Name Plate')">
-						<img src="https://images.unsplash.com/photo-1589308453153-e1e5137e14d5?auto=format&fit=crop&w=800&q=80" alt="Name Plate">
-						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-						<div class="p-3 text-center">
-							<h5 class="gallery-title mb-0">Acrylic Office Name Plate</h5>
-							<span class="badge bg-warning text-dark mt-2">Custom Gifts</span>
 						</div>
 					</div>
 				</div>
@@ -479,6 +498,28 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- Flex & Banners -->
+				<div class="col-md-6 col-lg-4 gallery-item flex">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80', 'High-HD Outdoor Event Flex Banner')">
+						<img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?auto=format&fit=crop&w=800&q=80" alt="Flex Printing">
+						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+						<div class="p-3 text-center">
+							<h5 class="gallery-title mb-0">High-HD Outdoor Event Flex Banner</h5>
+							<span class="badge bg-success mt-2">Flex & Banners</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 gallery-item flex">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1551269901-6e84f23543e6?auto=format&fit=crop&w=800&q=80', 'Corporate Event Posters')">
+						<img src="https://images.unsplash.com/photo-1551269901-6e84f23543e6?auto=format&fit=crop&w=800&q=80" alt="Posters">
+						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+						<div class="p-3 text-center">
+							<h5 class="gallery-title mb-0">Corporate Event Posters</h5>
+							<span class="badge bg-success mt-2">Flex & Banners</span>
+						</div>
+					</div>
+				</div>
 				<div class="col-md-6 col-lg-4 gallery-item flex">
 					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80', 'Shop Front Flex Banner')">
 						<img src="https://images.unsplash.com/photo-1533743983669-94fa5c4338ec?auto=format&fit=crop&w=800&q=80" alt="Shop Banner">
@@ -486,6 +527,38 @@
 						<div class="p-3 text-center">
 							<h5 class="gallery-title mb-0">Shop Front Flex Banner</h5>
 							<span class="badge bg-success mt-2">Flex & Banners</span>
+						</div>
+					</div>
+				</div>
+
+				<!-- Custom Gifts & Trophies -->
+				<div class="col-md-6 col-lg-4 gallery-item gifts">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80', 'Customized Corporate Awards & Trophies')">
+						<img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80" alt="Trophy">
+						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+						<div class="p-3 text-center">
+							<h5 class="gallery-title mb-0">Customized Corporate Trophies</h5>
+							<span class="badge bg-warning text-dark mt-2">Custom Gifts</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 gallery-item gifts">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=800&q=80', 'Custom Printed Keychains & Photo Frames')">
+						<img src="https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=800&q=80" alt="Gifts">
+						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+						<div class="p-3 text-center">
+							<h5 class="gallery-title mb-0">Custom Printed Keychains & Frames</h5>
+							<span class="badge bg-warning text-dark mt-2">Custom Gifts</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4 gallery-item gifts">
+					<div class="gallery-card" onclick="openPreview('https://images.unsplash.com/photo-1589308453153-e1e5137e14d5?auto=format&fit=crop&w=800&q=80', 'Acrylic Office Name Plate')">
+						<img src="https://images.unsplash.com/photo-1589308453153-e1e5137e14d5?auto=format&fit=crop&w=800&q=80" alt="Name Plate">
+						<div class="gallery-card-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+						<div class="p-3 text-center">
+							<h5 class="gallery-title mb-0">Acrylic Office Name Plate</h5>
+							<span class="badge bg-warning text-dark mt-2">Custom Gifts</span>
 						</div>
 					</div>
 				</div>
@@ -518,7 +591,7 @@
 	</div>
 
 	<!-- ============================================================ -->
-	<!-- ===== UPDATED FOOTER AS PER IMAGE ===== -->
+	<!-- ===== UPDATED FOOTER ===== -->
 	<!-- ============================================================ -->
 	<footer class="footer">
 		<div class="container">
@@ -529,7 +602,7 @@
 						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
 						<span class="brand-text-graphics">Graphics</span>
 					</div>
-					<p class="footer-tagline mt-2">Premium Digital Printing | Graphic Design | Branding Solutions</p>
+					<p class="footer-tagline">Premium Digital Printing | Graphic Design | Branding Solutions</p>
 					<div class="footer-divider"></div>
 					<p class="footer-about-text">
 						Print Beyond Expectations. Serving Businesses Across Tamil Nadu with high-quality printing & branding solutions.
@@ -547,7 +620,7 @@
 					<h6 class="footer-heading">Quick Links</h6>
 					<ul class="list-unstyled">
 						<li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
-						<li class="mb-2"><a href="about.html" class="footer-link">About Us</a></li>
+						<li class="mb-2"><a href="aboutus.html" class="footer-link">About Us</a></li>
 						<li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
 						<li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
 						<li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
@@ -572,19 +645,19 @@
 					<h6 class="footer-heading">Contact Info</h6>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-location-dot"></i>
-						37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
+						<span>37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001</span>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-phone"></i>
-						<a href="tel:+919952760656" class="footer-link">099527 60656</a>
+						<a href="tel:+919952760656">+91 99527 60656</a>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-envelope"></i>
-						<a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
+						<a href="mailto:rkgraphics@gmail.com">rkgraphics@gmail.com</a>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-clock"></i>
-						Mon-Sat: 9AM - 9PM
+						<span>Mon-Sat: 9AM - 9PM</span>
 					</div>
 				</div>
 			</div>
@@ -594,7 +667,7 @@
 				<div class="row align-items-center">
 					<div class="col-md-6 text-center text-md-start">
 						<span class="footer-bottom-text">
-							© 2026 <strong class="text-white">RK Graphics</strong>. All Rights Reserved.
+							© 2026 <strong>RK Graphics</strong>. All Rights Reserved.
 						</span>
 					</div>
 					<div class="col-md-6 text-center text-md-end">
