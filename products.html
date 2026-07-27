@@ -40,40 +40,40 @@
         }
 
         /* ===== PAGE HEADER WITH BACKGROUND IMAGE ===== */
-		.page-header {
-			position: relative;
-			padding: 80px 0;
-			color: white;
-			background-image: url('img/digital-press-g1.hvif');
-			background-size: cover;
-			background-position: center;
-			background-attachment: fixed;
-		}
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.75));
-            z-index: 0;
-        }
-
-        .page-header .container {
+        .page-header {
             position: relative;
-            z-index: 1;
+            padding: 80px 0;
+            color: white;
+            background-image: url('img/digital-press-g1.avif');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
-        .page-header h1 {
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
+            .page-header::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                background: linear-gradient(135deg, rgba(30, 60, 114, 0.85), rgba(42, 82, 152, 0.75));
+                z-index: 0;
+            }
 
-        .page-header .lead {
-            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
+            .page-header .container {
+                position: relative;
+                z-index: 1;
+            }
 
-        .page-header .badge {
-            box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
-        }
+            .page-header h1 {
+                text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            }
+
+            .page-header .lead {
+                text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            }
+
+            .page-header .badge {
+                box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+            }
 
         .btn-brand {
             background-color: var(--brand-pink);
@@ -84,10 +84,10 @@
             border: none;
         }
 
-        .btn-brand:hover {
-            background-color: #c2185b;
-            color: white;
-        }
+            .btn-brand:hover {
+                background-color: #c2185b;
+                color: white;
+            }
 
         .btn-outline-brand {
             border: 2px solid var(--brand-pink);
@@ -97,10 +97,10 @@
             padding: 8px 22px;
         }
 
-        .btn-outline-brand:hover {
-            background-color: var(--brand-pink);
-            color: white;
-        }
+            .btn-outline-brand:hover {
+                background-color: var(--brand-pink);
+                color: white;
+            }
 
         .product-card {
             border: none;
@@ -114,54 +114,74 @@
             text-align: center;
         }
 
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
-            border-color: var(--brand-pink);
-        }
+            .product-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
+                border-color: var(--brand-pink);
+            }
 
-        .product-card .product-icon {
-            font-size: 2.5rem;
-            color: var(--brand-pink);
-            margin-bottom: 10px;
-            transition: transform 0.3s;
-        }
+            .product-card .product-icon {
+                font-size: 2.5rem;
+                color: var(--brand-pink);
+                margin-bottom: 10px;
+                transition: transform 0.3s;
+            }
 
-        .product-card:hover .product-icon {
-            transform: scale(1.1);
-        }
+            .product-card:hover .product-icon {
+                transform: scale(1.1);
+            }
 
-        .product-card .product-name {
-            font-weight: 700;
-            color: var(--brand-blue);
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
+            .product-card .product-name {
+                font-weight: 700;
+                color: var(--brand-blue);
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
 
-        .product-card:hover .product-name {
-            color: var(--brand-pink);
-        }
+            .product-card:hover .product-name {
+                color: var(--brand-pink);
+            }
 
-        .product-card .product-sub {
-            font-size: 0.75rem;
-            color: #999;
-        }
+            .product-card .product-sub {
+                font-size: 0.75rem;
+                color: #999;
+            }
 
         .stats-section {
             background: #f8f9fa;
             padding: 30px 0;
         }
 
-        .stats-section .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+            .stats-section .stat-number {
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--brand-pink);
+            }
+
+            .stats-section .stat-label {
+                font-weight: 600;
+                color: var(--brand-blue);
+            }
+
+        /* Industry Badges */
+        .industry-badge {
+            display: inline-block;
+            background: rgba(233, 30, 99, 0.08);
             color: var(--brand-pink);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin: 4px;
+            border: 1px solid rgba(233, 30, 99, 0.15);
+            transition: all 0.3s ease;
         }
 
-        .stats-section .stat-label {
-            font-weight: 600;
-            color: var(--brand-blue);
-        }
+            .industry-badge:hover {
+                background: var(--brand-pink);
+                color: white;
+                transform: translateY(-2px);
+            }
 
         /* WhatsApp */
         .whatsapp-wrapper {
@@ -187,16 +207,24 @@
             animation: pulse 2s infinite;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            color: white;
-            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
-        }
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                color: white;
+                box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+            }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
 
         .whatsapp-tooltip {
@@ -215,58 +243,159 @@
             border: 1px solid #eee;
         }
 
-        .whatsapp-tooltip::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: 20px;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid white;
-        }
+            .whatsapp-tooltip::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                right: 20px;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-top: 10px solid white;
+            }
 
         .whatsapp-wrapper:hover .whatsapp-tooltip {
             display: block;
         }
 
-        /* Footer */
-        .footer-link {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: color 0.3s;
+        /* ===== FOOTER STYLES ===== */
+        .footer {
+            background: #0b1a2e;
+            color: #fff;
+            padding-top: 60px;
+            padding-bottom: 30px;
         }
 
-        .footer-link:hover {
-            color: var(--brand-pink);
-        }
+            .footer .brand-text-rk {
+                color: var(--brand-pink);
+                font-weight: 800;
+                font-size: 1.8rem;
+            }
 
-        .footer-social {
-            display: inline-block;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            text-align: center;
-            line-height: 38px;
-            color: white;
-            transition: all 0.3s;
-            margin: 0 5px;
-        }
+            .footer .brand-text-graphics {
+                color: #fff;
+                font-weight: 700;
+                font-size: 1.8rem;
+            }
 
-        .footer-social:hover {
-            background: var(--brand-pink);
-            color: white;
-            transform: translateY(-3px);
-        }
+            .footer .footer-tagline {
+                color: rgba(255,255,255,0.6);
+                font-size: 0.95rem;
+                letter-spacing: 0.5px;
+                margin-top: 8px;
+            }
 
-        /* Responsive */
+            .footer .footer-divider {
+                width: 50px;
+                height: 3px;
+                background: var(--brand-pink);
+                margin: 16px 0 18px;
+                border-radius: 4px;
+            }
+
+            .footer .footer-about-text {
+                color: rgba(255,255,255,0.7);
+                font-size: 0.95rem;
+                line-height: 1.8;
+                max-width: 400px;
+            }
+
+            .footer .footer-social-icon {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: rgba(255,255,255,0.08);
+                text-align: center;
+                line-height: 40px;
+                color: #fff;
+                transition: all 0.3s ease;
+                margin-right: 8px;
+                font-size: 1.1rem;
+                text-decoration: none;
+            }
+
+                .footer .footer-social-icon:hover {
+                    background: var(--brand-pink);
+                    color: #fff;
+                    transform: translateY(-3px);
+                }
+
+            .footer .footer-heading {
+                color: #fff;
+                font-weight: 700;
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+                letter-spacing: 0.5px;
+            }
+
+            .footer .footer-link {
+                color: rgba(255,255,255,0.6);
+                text-decoration: none;
+                transition: color 0.3s ease;
+                font-size: 0.95rem;
+            }
+
+                .footer .footer-link:hover {
+                    color: var(--brand-pink);
+                }
+
+            .footer .footer-contact-item {
+                color: rgba(255,255,255,0.7);
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+                .footer .footer-contact-item i {
+                    color: var(--brand-pink);
+                    width: 20px;
+                    margin-top: 4px;
+                    flex-shrink: 0;
+                }
+
+                .footer .footer-contact-item a {
+                    color: rgba(255,255,255,0.7);
+                    text-decoration: none;
+                    transition: color 0.3s;
+                }
+
+                    .footer .footer-contact-item a:hover {
+                        color: var(--brand-pink);
+                    }
+
+            .footer .footer-bottom {
+                border-top: 1px solid rgba(255,255,255,0.08);
+                padding-top: 25px;
+                margin-top: 40px;
+            }
+
+            .footer .footer-bottom-text {
+                color: rgba(255,255,255,0.5);
+                font-size: 0.9rem;
+            }
+
+                .footer .footer-bottom-text .heart {
+                    color: var(--brand-pink);
+                }
+
+                .footer .footer-bottom-text strong {
+                    color: #fff;
+                }
+
         @media (max-width: 768px) {
             .page-header {
                 padding: 50px 0;
                 background-attachment: scroll;
             }
-            .page-header h1 {
-                font-size: 2rem;
+
+                .page-header h1 {
+                    font-size: 2rem;
+                }
+
+            .footer .footer-about-text {
+                max-width: 100%;
             }
         }
     </style>
@@ -307,9 +436,9 @@
     <!-- ===== PAGE HEADER WITH BACKGROUND IMAGE ===== -->
     <section class="page-header text-center">
         <div class="container">
-            <h1 class="fw-bold display-4">Our Complete Product Catalog</h1>
-            <p class="lead fs-4">Everything listed on our visiting card & more!</p>
-            <p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">17+ Products</span></p>
+            <h1 class="fw-bold display-4">Our Portfolio</h1>
+            <p class="lead fs-4">Our Recent Projects</p>
+            <p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">We take pride in delivering exceptional printing solutions</span></p>
         </div>
     </section>
 
@@ -330,6 +459,26 @@
                     <div class="stat-label">Happy Clients</div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Industries -->
+    <section class="py-4 bg-light border-bottom">
+        <div class="container text-center">
+            <h5 class="fw-bold" style="color: var(--brand-blue);">Our portfolio includes:</h5>
+            <div class="mt-3">
+                <span class="industry-badge"><i class="fa-solid fa-building me-1"></i> Business Branding</span>
+                <span class="industry-badge"><i class="fa-solid fa-tag me-1"></i> Product Labels</span>
+                <span class="industry-badge"><i class="fa-solid fa-signs-post me-1"></i> Retail Sign Boards</span>
+                <span class="industry-badge"><i class="fa-solid fa-hospital me-1"></i> Hospital Printing</span>
+                <span class="industry-badge"><i class="fa-solid fa-school me-1"></i> School Printing</span>
+                <span class="industry-badge"><i class="fa-solid fa-utensils me-1"></i> Restaurant Menu Cards</span>
+                <span class="industry-badge"><i class="fa-solid fa-box me-1"></i> Packaging Designs</span>
+                <span class="industry-badge"><i class="fa-solid fa-stamp me-1"></i> Stickers</span>
+                <span class="industry-badge"><i class="fa-solid fa-scroll me-1"></i> Flex Banners</span>
+                <span class="industry-badge"><i class="fa-solid fa-id-card me-1"></i> Corporate Identity Materials</span>
+            </div>
+            <p class="text-muted mt-3">Every project reflects our commitment to quality, creativity, and customer satisfaction.</p>
         </div>
     </section>
 
@@ -484,7 +633,7 @@
     </section>
 
     <!-- ============================================================ -->
-    <!-- ===== UPDATED FOOTER AS PER IMAGE ===== -->
+    <!-- ===== UPDATED FOOTER ===== -->
     <!-- ============================================================ -->
     <footer class="footer">
         <div class="container">
@@ -495,7 +644,7 @@
                         <span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
                         <span class="brand-text-graphics">Graphics</span>
                     </div>
-                    <p class="footer-tagline mt-2">Premium Digital Printing | Graphic Design | Branding Solutions</p>
+                    <p class="footer-tagline">Premium Digital Printing | Graphic Design | Branding Solutions</p>
                     <div class="footer-divider"></div>
                     <p class="footer-about-text">
                         Print Beyond Expectations. Serving Businesses Across Tamil Nadu with high-quality printing & branding solutions.
@@ -513,7 +662,7 @@
                     <h6 class="footer-heading">Quick Links</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
-                        <li class="mb-2"><a href="about.html" class="footer-link">About Us</a></li>
+                        <li class="mb-2"><a href="aboutus.html" class="footer-link">About Us</a></li>
                         <li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
                         <li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
                         <li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
@@ -538,19 +687,19 @@
                     <h6 class="footer-heading">Contact Info</h6>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-location-dot"></i>
-                        37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
+                        <span>37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001</span>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-phone"></i>
-                        <a href="tel:+919952760656" class="footer-link">099527 60656</a>
+                        <a href="tel:+919952760656">+91 99527 60656</a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-envelope"></i>
-                        <a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
+                        <a href="mailto:rkgraphics@gmail.com">rkgraphics@gmail.com</a>
                     </div>
                     <div class="footer-contact-item">
                         <i class="fa-solid fa-clock"></i>
-                        Mon-Sat: 9AM - 9PM
+                        <span>Mon-Sat: 9AM - 9PM</span>
                     </div>
                 </div>
             </div>
@@ -560,7 +709,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
                         <span class="footer-bottom-text">
-                            © 2026 <strong class="text-white">RK Graphics</strong>. All Rights Reserved.
+                            © 2026 <strong>RK Graphics</strong>. All Rights Reserved.
                         </span>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
