@@ -148,6 +148,59 @@
 				color: var(--brand-blue);
 			}
 
+		.service-category {
+			background: white;
+			border-radius: 12px;
+			padding: 20px 25px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+			border: 1px solid #f0f0f0;
+			transition: all 0.3s ease;
+			height: 100%;
+		}
+
+			.service-category:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 30px rgba(233, 30, 99, 0.12);
+				border-color: var(--brand-pink);
+			}
+
+			.service-category .cat-icon {
+				font-size: 2rem;
+				color: var(--brand-pink);
+				margin-bottom: 12px;
+			}
+
+			.service-category h5 {
+				font-weight: 700;
+				color: var(--brand-blue);
+				font-size: 1.1rem;
+			}
+
+			.service-category ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+
+				.service-category ul li {
+					padding: 4px 0;
+					color: #555;
+					font-size: 0.9rem;
+					display: flex;
+					align-items: center;
+					gap: 8px;
+				}
+
+					.service-category ul li::before {
+						content: '▸';
+						color: var(--brand-pink);
+						font-weight: 700;
+					}
+
+					.service-category ul li:hover {
+						color: var(--brand-pink);
+					}
+
 		/* WhatsApp */
 		.whatsapp-wrapper {
 			position: fixed;
@@ -222,37 +275,133 @@
 			display: block;
 		}
 
-		/* Footer */
-		.footer-link {
-			color: rgba(255,255,255,0.7);
-			text-decoration: none;
-			transition: color 0.3s;
+		/* ===== FOOTER STYLES ===== */
+		.footer {
+			background: #0b1a2e;
+			color: #fff;
+			padding-top: 60px;
+			padding-bottom: 30px;
 		}
 
-			.footer-link:hover {
+			.footer .brand-text-rk {
 				color: var(--brand-pink);
+				font-weight: 800;
+				font-size: 1.8rem;
 			}
 
-		.footer-social {
-			display: inline-block;
-			width: 38px;
-			height: 38px;
-			border-radius: 50%;
-			background: rgba(255,255,255,0.1);
-			text-align: center;
-			line-height: 38px;
-			color: white;
-			transition: all 0.3s;
-			margin: 0 5px;
-		}
+			.footer .brand-text-graphics {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.8rem;
+			}
 
-			.footer-social:hover {
+			.footer .footer-tagline {
+				color: rgba(255,255,255,0.6);
+				font-size: 0.95rem;
+				letter-spacing: 0.5px;
+				margin-top: 8px;
+			}
+
+			.footer .footer-divider {
+				width: 50px;
+				height: 3px;
 				background: var(--brand-pink);
-				color: white;
-				transform: translateY(-3px);
+				margin: 16px 0 18px;
+				border-radius: 4px;
 			}
 
-		/* Responsive */
+			.footer .footer-about-text {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				line-height: 1.8;
+				max-width: 400px;
+			}
+
+			.footer .footer-social-icon {
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.08);
+				text-align: center;
+				line-height: 40px;
+				color: #fff;
+				transition: all 0.3s ease;
+				margin-right: 8px;
+				font-size: 1.1rem;
+				text-decoration: none;
+			}
+
+				.footer .footer-social-icon:hover {
+					background: var(--brand-pink);
+					color: #fff;
+					transform: translateY(-3px);
+				}
+
+			.footer .footer-heading {
+				color: #fff;
+				font-weight: 700;
+				font-size: 1.1rem;
+				margin-bottom: 20px;
+				letter-spacing: 0.5px;
+			}
+
+			.footer .footer-link {
+				color: rgba(255,255,255,0.6);
+				text-decoration: none;
+				transition: color 0.3s ease;
+				font-size: 0.95rem;
+			}
+
+				.footer .footer-link:hover {
+					color: var(--brand-pink);
+				}
+
+			.footer .footer-contact-item {
+				color: rgba(255,255,255,0.7);
+				font-size: 0.95rem;
+				margin-bottom: 12px;
+				display: flex;
+				align-items: flex-start;
+				gap: 10px;
+			}
+
+				.footer .footer-contact-item i {
+					color: var(--brand-pink);
+					width: 20px;
+					margin-top: 4px;
+					flex-shrink: 0;
+				}
+
+				.footer .footer-contact-item a {
+					color: rgba(255,255,255,0.7);
+					text-decoration: none;
+					transition: color 0.3s;
+				}
+
+					.footer .footer-contact-item a:hover {
+						color: var(--brand-pink);
+					}
+
+			.footer .footer-bottom {
+				border-top: 1px solid rgba(255,255,255,0.08);
+				padding-top: 25px;
+				margin-top: 40px;
+			}
+
+			.footer .footer-bottom-text {
+				color: rgba(255,255,255,0.5);
+				font-size: 0.9rem;
+			}
+
+				.footer .footer-bottom-text .heart {
+					color: var(--brand-pink);
+				}
+
+				.footer .footer-bottom-text strong {
+					color: #fff;
+				}
+
 		@media (max-width: 768px) {
 			.page-header {
 				padding: 50px 0;
@@ -262,6 +411,10 @@
 				.page-header h1 {
 					font-size: 2rem;
 				}
+
+			.footer .footer-about-text {
+				max-width: 100%;
+			}
 		}
 	</style>
 </head>
@@ -301,9 +454,9 @@
 	<!-- ===== PAGE HEADER WITH BACKGROUND IMAGE ===== -->
 	<section class="page-header text-center">
 		<div class="container">
-			<h1 class="fw-bold display-4">Our Professional Services</h1>
-			<p class="lead fs-4">End-to-end Solutions: Designing, Printing, Distribution & Advertising</p>
-			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">8+ Services</span></p>
+			<h1 class="fw-bold display-4">Our Services</h1>
+			<p class="lead fs-4">Professional Printing Services</p>
+			<p class="mb-0"><span class="badge bg-danger fs-6 px-4 py-2">We provide complete printing and branding solutions</span></p>
 		</div>
 	</section>
 
@@ -317,7 +470,7 @@
 				</div>
 				<div class="col-4">
 					<div class="stat-number">8+</div>
-					<div class="stat-label">Services</div>
+					<div class="stat-label">Service Categories</div>
 				</div>
 				<div class="col-4">
 					<div class="stat-number">1000+</div>
@@ -327,7 +480,7 @@
 		</div>
 	</section>
 
-	<!-- Services -->
+	<!-- Detailed Services from Image -->
 	<section class="py-5">
 		<div class="container">
 			<div class="text-center mb-5">
@@ -337,76 +490,135 @@
 			</div>
 
 			<div class="row g-4">
+				<!-- Business Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-danger"><i class="fa-solid fa-pen-ruler"></i></div>
-						<h3 style="color: var(--brand-blue);">1. Graphic Designing</h3>
-						<p>Custom branding, creative logo creation, poster designs, and customized layout designs for business promotion.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-building"></i></div>
+						<h5>Business Printing</h5>
+						<ul>
+							<li>Visiting Cards</li>
+							<li>Letterheads</li>
+							<li>Bill Books</li>
+							<li>Envelopes</li>
+							<li>Receipt Books</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Branding Solutions -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-primary"><i class="fa-solid fa-print"></i></div>
-						<h3 style="color: var(--brand-blue);">2. High Quality Printing</h3>
-						<p>Flex banners, offset commercial printing, digital visiting cards, and invitation printing with vibrant finishes.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+						<h5>Branding Solutions</h5>
+						<ul>
+							<li>Logo Design</li>
+							<li>Product Label Printing</li>
+							<li>Sticker Printing</li>
+							<li>Packaging Design</li>
+							<li>Brand Identity Design</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Large Format Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-success"><i class="fa-solid fa-truck-ramp-box"></i></div>
-						<h3 style="color: var(--brand-blue);">3. Pamphlet Distribution</h3>
-						<p>Targeted local flyer and pamphlet distribution services to maximize your business outreach and visibility.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-scroll"></i></div>
+						<h5>Large Format Printing</h5>
+						<ul>
+							<li>Flex Banners</li>
+							<li>Vinyl Printing</li>
+							<li>Sign Boards</li>
+							<li>Roll-Up Standees</li>
+							<li>Glow Sign Boards</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Corporate Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-warning"><i class="fa-solid fa-bullhorn"></i></div>
-						<h3 style="color: var(--brand-blue);">4. Outdoor Advertising</h3>
-						<p>Complete signboard installations, LED display board setups, and vinyl stickers branding for shops & businesses.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-id-card"></i></div>
+						<h5>Corporate Printing</h5>
+						<ul>
+							<li>ID Cards</li>
+							<li>Employee Cards</li>
+							<li>Company Profiles</li>
+							<li>Office Branding</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Hospital Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-info"><i class="fa-solid fa-id-card"></i></div>
-						<h3 style="color: var(--brand-blue);">5. PVC ID Cards</h3>
-						<p>Premium quality PVC ID card printing with photo, barcode, QR code, and lanyard options for corporates & events.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-hospital"></i></div>
+						<h5>Hospital Printing</h5>
+						<ul>
+							<li>Hospital Files</li>
+							<li>Prescription Pads</li>
+							<li>Medical Forms</li>
+							<li>Patient Record Files</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Promotional Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-danger"><i class="fa-solid fa-lightbulb"></i></div>
-						<h3 style="color: var(--brand-blue);">6. LED Sign Boards</h3>
-						<p>Eye-catching LED glowing sign boards, digital display boards, and 3D acrylic letter signage for brand visibility.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-bullhorn"></i></div>
+						<h5>Promotional Printing</h5>
+						<ul>
+							<li>Brochures</li>
+							<li>Flyers</li>
+							<li>Pamphlets</li>
+							<li>Posters</li>
+							<li>Catalogues</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Wedding & Event Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-warning"><i class="fa-solid fa-trophy"></i></div>
-						<h3 style="color: var(--brand-blue);">7. Custom Trophies</h3>
-						<p>Premium quality awards, recognition trophies, mementos, and corporate gifts customized with engraving.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-ring"></i></div>
+						<h5>Wedding & Event Printing</h5>
+						<ul>
+							<li>Wedding Invitations</li>
+							<li>Birthday Invitations</li>
+							<li>Event Cards</li>
+							<li>Thank You Cards</li>
+						</ul>
 					</div>
 				</div>
+
+				<!-- Custom Printing -->
 				<div class="col-md-6 col-lg-4">
-					<div class="service-box">
-						<div class="service-icon text-primary"><i class="fa-solid fa-key"></i></div>
-						<h3 style="color: var(--brand-blue);">8. Keychains & Gifts</h3>
-						<p>Customized promotional keychains, branded corporate gifts, and personalized items for events & giveaways.</p>
-						<a href="contact.html" class="btn btn-outline-brand mt-2">Enquire Now</a>
+					<div class="service-category">
+						<div class="cat-icon"><i class="fa-solid fa-palette"></i></div>
+						<h5>Custom Printing</h5>
+						<ul>
+							<li>Calendars</li>
+							<li>Certificates</li>
+							<li>Photo Frames</li>
+							<li>Trophy Printing</li>
+							<li>Menu Cards</li>
+							<li>Custom Design Printing</li>
+						</ul>
 					</div>
 				</div>
+			</div>
+
+			<div class="text-center mt-5 p-4 bg-light rounded-4">
+				<h4 style="color: var(--brand-blue);">Need a custom quote?</h4>
+				<p class="text-muted">Contact us for bulk orders and special pricing</p>
+				<a href="contact.html" class="btn btn-brand">Contact Us Now <i class="fa-solid fa-arrow-right ms-2"></i></a>
 			</div>
 		</div>
 	</section>
 
 	<!-- CTA -->
-	<section class="py-5 bg-light">
+	<section class="py-5 bg-light border-top">
 		<div class="container">
 			<div class="p-4 p-md-5 text-center bg-white rounded-4 shadow-sm border">
 				<h2 style="color: var(--brand-blue);">Need a Custom Service?</h2>
@@ -417,7 +629,7 @@
 	</section>
 
 	<!-- ============================================================ -->
-	<!-- ===== UPDATED FOOTER AS PER IMAGE ===== -->
+	<!-- ===== UPDATED FOOTER ===== -->
 	<!-- ============================================================ -->
 	<footer class="footer">
 		<div class="container">
@@ -428,7 +640,7 @@
 						<span class="brand-text-rk"><i class="fa-solid fa-gem me-1"></i>RK</span>
 						<span class="brand-text-graphics">Graphics</span>
 					</div>
-					<p class="footer-tagline mt-2">Premium Digital Printing | Graphic Design | Branding Solutions</p>
+					<p class="footer-tagline">Premium Digital Printing | Graphic Design | Branding Solutions</p>
 					<div class="footer-divider"></div>
 					<p class="footer-about-text">
 						Print Beyond Expectations. Serving Businesses Across Tamil Nadu with high-quality printing & branding solutions.
@@ -446,7 +658,7 @@
 					<h6 class="footer-heading">Quick Links</h6>
 					<ul class="list-unstyled">
 						<li class="mb-2"><a href="index.html" class="footer-link">Home</a></li>
-						<li class="mb-2"><a href="about.html" class="footer-link">About Us</a></li>
+						<li class="mb-2"><a href="aboutus.html" class="footer-link">About Us</a></li>
 						<li class="mb-2"><a href="services.html" class="footer-link">Services</a></li>
 						<li class="mb-2"><a href="products.html" class="footer-link">Products</a></li>
 						<li class="mb-2"><a href="gallery.html" class="footer-link">Gallery</a></li>
@@ -471,19 +683,19 @@
 					<h6 class="footer-heading">Contact Info</h6>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-location-dot"></i>
-						37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001
+						<span>37, Annai Indira St, opposite WATER TANK,<br>Ratanchand Nagar, ASHOK NAGAR,<br>Arakkonam, Tamil Nadu 631001</span>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-phone"></i>
-						<a href="tel:+919952760656" class="footer-link">099527 60656</a>
+						<a href="tel:+919952760656">+91 99527 60656</a>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-envelope"></i>
-						<a href="mailto:rkgraphics@gmail.com" class="footer-link">rkgraphics@gmail.com</a>
+						<a href="mailto:rkgraphics@gmail.com">rkgraphics@gmail.com</a>
 					</div>
 					<div class="footer-contact-item">
 						<i class="fa-solid fa-clock"></i>
-						Mon-Sat: 9AM - 9PM
+						<span>Mon-Sat: 9AM - 9PM</span>
 					</div>
 				</div>
 			</div>
@@ -493,7 +705,7 @@
 				<div class="row align-items-center">
 					<div class="col-md-6 text-center text-md-start">
 						<span class="footer-bottom-text">
-							© 2026 <strong class="text-white">RK Graphics</strong>. All Rights Reserved.
+							© 2026 <strong>RK Graphics</strong>. All Rights Reserved.
 						</span>
 					</div>
 					<div class="col-md-6 text-center text-md-end">

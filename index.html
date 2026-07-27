@@ -392,6 +392,97 @@
 				color: #999;
 			}
 
+		/* ===== REVIEWS SECTION ===== */
+		.review-card {
+			background: white;
+			border-radius: 16px;
+			padding: 30px;
+			box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+			border: 1px solid #f0f0f0;
+			transition: all 0.3s ease;
+			height: 100%;
+		}
+
+			.review-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 8px 35px rgba(233, 30, 99, 0.10);
+				border-color: var(--brand-pink);
+			}
+
+			.review-card .stars {
+				color: #f5b342;
+				font-size: 1.1rem;
+				letter-spacing: 2px;
+			}
+
+			.review-card .review-text {
+				color: #555;
+				font-size: 0.95rem;
+				line-height: 1.7;
+			}
+
+			.review-card .reviewer-name {
+				font-weight: 700;
+				color: var(--brand-blue);
+			}
+
+			.review-card .reviewer-company {
+				color: #999;
+				font-size: 0.85rem;
+			}
+
+		/* ===== FAQ SECTION ===== */
+		.faq-section {
+			background: #f8f9fc;
+		}
+
+		.faq-item {
+			background: white;
+			border-radius: 12px;
+			border: 1px solid #f0f0f0;
+			margin-bottom: 12px;
+			overflow: hidden;
+			transition: all 0.3s ease;
+		}
+
+			.faq-item:hover {
+				border-color: var(--brand-pink);
+			}
+
+			.faq-item .faq-question {
+				padding: 18px 25px;
+				font-weight: 600;
+				color: var(--brand-blue);
+				cursor: pointer;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background: white;
+				transition: background 0.3s;
+				margin: 0;
+				font-size: 1rem;
+			}
+
+				.faq-item .faq-question:hover {
+					background: rgba(233, 30, 99, 0.04);
+				}
+
+				.faq-item .faq-question .fa-chevron-down {
+					transition: transform 0.3s ease;
+					color: var(--brand-pink);
+				}
+
+				.faq-item .faq-question.collapsed .fa-chevron-down {
+					transform: rotate(-90deg);
+				}
+
+			.faq-item .faq-answer {
+				padding: 0 25px 20px 25px;
+				color: #666;
+				font-size: 0.95rem;
+				line-height: 1.7;
+			}
+
 		/* WhatsApp Floating Button */
 		.whatsapp-wrapper {
 			position: fixed;
@@ -466,9 +557,7 @@
 			display: block;
 		}
 
-		/* ============================================================ */
-		/* ===== UPDATED FOOTER STYLES ===== */
-		/* ============================================================ */
+		/* ===== FOOTER STYLES ===== */
 		.footer {
 			background: #0b1a2e;
 			color: #fff;
@@ -595,10 +684,13 @@
 					color: #fff;
 				}
 
-		/* responsive */
 		@media (max-width: 768px) {
 			.footer .footer-about-text {
 				max-width: 100%;
+			}
+
+			.review-card {
+				padding: 20px;
 			}
 		}
 	</style>
@@ -1065,6 +1157,143 @@
 						<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=200&fit=crop" alt="Foody's">
 						<span class="client-badge">⭐</span>
 						<p class="client-name">Foody's</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ====== NEW: CUSTOMER REVIEWS SECTION ====== -->
+	<section class="py-5 border-bottom">
+		<div class="container">
+			<div class="text-center mb-5">
+				<h6 class="text-uppercase text-danger fw-bold mb-1">Customer Reviews</h6>
+				<h2 class="fw-bold" style="color: var(--brand-blue);">What Our Customers Say</h2>
+				<p class="text-muted">Customer satisfaction is our greatest achievement.</p>
+			</div>
+
+			<div class="row g-4">
+				<div class="col-md-6 col-lg-4">
+					<div class="review-card">
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
+						<p class="review-text mt-3">
+							"RK Graphics delivered exceptional quality for our business cards and flex banners. The turnaround was quick and the pricing was very competitive. Highly recommended!"
+						</p>
+						<div class="mt-3">
+							<div class="reviewer-name">Rajesh Kumar</div>
+							<div class="reviewer-company">TechCorp Solutions</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="review-card">
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
+						<p class="review-text mt-3">
+							"We've been using RK Graphics for all our hospital printing needs - from prescription pads to patient files. Their quality and professionalism are unmatched."
+						</p>
+						<div class="mt-3">
+							<div class="reviewer-name">Dr. Priya Srinivasan</div>
+							<div class="reviewer-company">MediLife Hospital</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="review-card">
+						<div class="stars">
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+						</div>
+						<p class="review-text mt-3">
+							"The LED sign board RK Graphics installed for our retail shop has been a game-changer. Excellent quality and they finished the job ahead of schedule."
+						</p>
+						<div class="mt-3">
+							<div class="reviewer-name">Suresh Babu</div>
+							<div class="reviewer-company">GrandStay Retail</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center mt-4">
+				<p class="text-muted small">We are proud to serve hundreds of happy customers who continue to trust RK Graphics for reliable service, premium quality, and timely delivery.</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- ====== NEW: FAQ SECTION ====== -->
+	<section class="faq-section py-5 border-bottom">
+		<div class="container">
+			<div class="text-center mb-5">
+				<h6 class="text-uppercase text-danger fw-bold mb-1">FAQ</h6>
+				<h2 class="fw-bold" style="color: var(--brand-blue);">Frequently Asked Questions</h2>
+				<p class="text-muted">Find quick answers to commonly asked questions</p>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-lg-8">
+					<div class="faq-item">
+						<div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+							<span>Do you provide graphic design services?</span>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div id="faq1" class="collapse show">
+							<div class="faq-answer">Yes. We offer complete graphic design solutions for all printing requirements. Our team of experienced designers can help create logos, brochures, banners, and any other design work you may need.</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false">
+							<span>Can I order custom printing?</span>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div id="faq2" class="collapse">
+							<div class="faq-answer">Absolutely. Every product can be fully customized according to your requirements. Whether it's size, material, color, or design, we tailor each project to your specific needs.</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false">
+							<span>Do you provide GST invoices?</span>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div id="faq3" class="collapse">
+							<div class="faq-answer">Yes. GST invoices are available for all eligible orders. We provide proper billing with GST details for all corporate and business orders.</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false">
+							<span>Do you deliver across Tamil Nadu?</span>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div id="faq4" class="collapse">
+							<div class="faq-answer">Yes. We offer courier and transport services across Tamil Nadu and throughout India. We ensure safe and timely delivery of all orders.</div>
+						</div>
+					</div>
+
+					<div class="faq-item">
+						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false">
+							<span>How can I place an order?</span>
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div id="faq5" class="collapse">
+							<div class="faq-answer">You can contact us through WhatsApp, phone, email, or by submitting the enquiry form on our website. We'll respond promptly and guide you through the ordering process.</div>
+						</div>
 					</div>
 				</div>
 			</div>
