@@ -8,6 +8,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Font Awesome Icons -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<!-- AOS Animation Library -->
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<style>
 		:root {
 			--brand-pink: #e91e63;
@@ -24,12 +26,14 @@
 		body {
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			color: #333;
+			overflow-x: hidden;
 		}
 
 		/* Navbar */
 		.navbar {
 			box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 			z-index: 1050;
+			transition: all 0.3s ease;
 		}
 
 		.brand-text-rk {
@@ -80,11 +84,14 @@
 			border-radius: 25px;
 			padding: 10px 25px;
 			border: none;
+			transition: all 0.3s ease;
 		}
 
 			.btn-brand:hover {
 				background-color: #c2185b;
 				color: white;
+				transform: scale(1.05);
+				box-shadow: 0 4px 15px rgba(233,30,99,0.4);
 			}
 
 		.btn-outline-brand {
@@ -93,11 +100,14 @@
 			font-weight: 600;
 			border-radius: 25px;
 			padding: 8px 22px;
+			transition: all 0.3s ease;
 		}
 
 			.btn-outline-brand:hover {
 				background-color: var(--brand-pink);
 				color: white;
+				transform: translateY(-3px);
+				box-shadow: 0 4px 15px rgba(233,30,99,0.3);
 			}
 
 		.badge-custom {
@@ -117,11 +127,12 @@
 			border: none;
 			border-radius: 12px;
 			box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-			transition: transform 0.3s;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
 		}
 
 			.feature-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-10px) scale(1.02);
+				box-shadow: 0 12px 40px rgba(233,30,99,0.15);
 			}
 
 		/* Why Choose Us */
@@ -132,6 +143,11 @@
 		.quick-add-icon {
 			font-size: 2.5rem;
 			color: var(--brand-pink);
+			transition: transform 0.3s ease;
+		}
+
+		.quick-add-section .col-md-3:hover .quick-add-icon {
+			transform: scale(1.2) rotate(5deg);
 		}
 
 		/* Welcome Section */
@@ -180,7 +196,14 @@
 				font-weight: 600;
 				margin: 3px;
 				border: 1px solid rgba(233, 30, 99, 0.15);
+				transition: all 0.3s ease;
 			}
+
+				.welcome-section .service-tag:hover {
+					background: var(--brand-pink);
+					color: white;
+					transform: scale(1.05);
+				}
 
 			.welcome-section .call-box {
 				background: var(--brand-blue);
@@ -188,7 +211,13 @@
 				padding: 25px 30px;
 				border-radius: 12px;
 				margin-top: 20px;
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
 			}
+
+				.welcome-section .call-box:hover {
+					transform: translateY(-5px);
+					box-shadow: 0 12px 30px rgba(30,60,114,0.3);
+				}
 
 				.welcome-section .call-box .phone-number {
 					font-size: 1.8rem;
@@ -253,7 +282,7 @@
 		}
 
 			.client-card:hover {
-				transform: translateY(-8px);
+				transform: translateY(-8px) scale(1.02);
 				box-shadow: 0 8px 30px rgba(233, 30, 99, 0.15);
 				border-color: var(--brand-pink);
 			}
@@ -305,7 +334,7 @@
 		}
 
 			.gallery-card:hover {
-				transform: translateY(-8px);
+				transform: translateY(-8px) scale(1.02);
 				box-shadow: 0 8px 30px rgba(233, 30, 99, 0.2);
 			}
 
@@ -373,7 +402,7 @@
 		}
 
 			.product-grid-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-8px) scale(1.03);
 				box-shadow: 0 8px 30px rgba(233, 30, 99, 0.12);
 				border-color: var(--brand-pink);
 			}
@@ -382,6 +411,11 @@
 				font-size: 2rem;
 				color: var(--brand-pink);
 				margin-bottom: 10px;
+				transition: transform 0.3s ease;
+			}
+
+			.product-grid-card:hover .product-icon {
+				transform: rotate(10deg) scale(1.1);
 			}
 
 			.product-grid-card h6 {
@@ -424,7 +458,7 @@
 		}
 
 			.whatsapp-float:hover {
-				transform: scale(1.1);
+				transform: scale(1.1) rotate(5deg);
 				color: white;
 				box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
 			}
@@ -495,7 +529,7 @@
 		}
 
 			.review-card:hover {
-				transform: translateY(-5px);
+				transform: translateY(-5px) scale(1.02);
 				box-shadow: 0 8px 35px rgba(233, 30, 99, 0.10);
 				border-color: var(--brand-pink);
 			}
@@ -533,11 +567,13 @@
 			transform: translateY(-50%);
 			opacity: 0.7;
 			border: none;
+			transition: opacity 0.3s, transform 0.3s;
 		}
 
 			.review-carousel-section .carousel-control-prev:hover,
 			.review-carousel-section .carousel-control-next:hover {
 				opacity: 1;
+				transform: translateY(-50%) scale(1.1);
 			}
 
 		.review-carousel-section .carousel-control-prev {
@@ -561,10 +597,12 @@
 				background: #ddd;
 				border: none;
 				margin: 0 5px;
+				transition: background 0.3s, transform 0.3s;
 			}
 
 				.review-carousel-section .carousel-indicators button.active {
 					background: var(--brand-pink);
+					transform: scale(1.2);
 				}
 
 		/* ===== FAQ SECTION ===== */
@@ -583,6 +621,8 @@
 
 			.faq-item:hover {
 				border-color: var(--brand-pink);
+				transform: translateY(-2px);
+				box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 			}
 
 			.faq-item .faq-question {
@@ -679,7 +719,7 @@
 				.footer .footer-social-icon:hover {
 					background: var(--brand-pink);
 					color: #fff;
-					transform: translateY(-3px);
+					transform: translateY(-3px) scale(1.1);
 				}
 
 			.footer .footer-heading {
@@ -693,12 +733,14 @@
 			.footer .footer-link {
 				color: rgba(255,255,255,0.6);
 				text-decoration: none;
-				transition: color 0.3s ease;
+				transition: color 0.3s ease, transform 0.3s ease;
 				font-size: 0.95rem;
+				display: inline-block;
 			}
 
 				.footer .footer-link:hover {
 					color: var(--brand-pink);
+					transform: translateX(5px);
 				}
 
 			.footer .footer-contact-item {
@@ -740,11 +782,23 @@
 
 				.footer .footer-bottom-text .heart {
 					color: var(--brand-pink);
+					display: inline-block;
+					animation: heartBeat 1.5s infinite;
 				}
 
-				.footer .footer-bottom-text strong {
-					color: #fff;
-				}
+		@keyframes heartBeat {
+			0%, 100% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.2);
+			}
+		}
+
+		.footer .footer-bottom-text strong {
+			color: #fff;
+		}
 
 		@media (max-width: 768px) {
 			.footer .footer-about-text {
@@ -786,12 +840,21 @@
 				right: -10px;
 			}
 		}
+
+		/* Scroll-triggered fade-in (AOS override) */
+		[data-aos] {
+			pointer-events: none;
+		}
+
+			[data-aos].aos-animate {
+				pointer-events: auto;
+			}
 	</style>
 </head>
 <body>
 
 	<!-- 1. Header Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" data-aos="fade-down" data-aos-duration="800">
 		<div class="container">
 			<a class="navbar-brand d-flex flex-column align-items-start" href="index.html">
 				<div>
@@ -822,7 +885,7 @@
 	</nav>
 
 	<!-- ===== CAROUSEL BANNERS ===== -->
-	<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+	<div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-aos="fade-up" data-aos-duration="1000">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
 			<button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
@@ -859,10 +922,10 @@
 	</div>
 
 	<!-- ======== WELCOME SECTION ======== -->
-	<section class="welcome-section">
+	<section class="welcome-section" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="row align-items-center g-4">
-				<div class="col-lg-7">
+				<div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
 					<span class="welcome-badge"><i class="fa-solid fa-star me-2"></i> Print Beyond Expectations</span>
 					<h2 class="fw-bold display-6" style="color: var(--brand-blue);">Premium Digital Printing & Branding Solutions</h2>
 					<p class="welcome-content mt-3">
@@ -882,7 +945,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-5">
+				<div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000">
 					<div class="welcome-image-wrapper mb-3">
 						<img src="img/rkgrpslsj.webp" alt="RK Graphics Printing Services">
 						<div class="image-overlay">
@@ -907,7 +970,7 @@
 	</section>
 
 	<!-- 3. Pillars Strip -->
-	<section class="py-3 bg-light border-bottom">
+	<section class="py-3 bg-light border-bottom" data-aos="fade-up" data-aos-duration="800">
 		<div class="container text-center">
 			<div class="row g-2">
 				<div class="col-6 col-md-3"><strong><i class="fa-solid fa-pen-nib text-danger me-2"></i>DESIGNING</strong></div>
@@ -919,7 +982,7 @@
 	</section>
 
 	<!-- 6. WHY CHOOSE US -->
-	<section class="py-5 quick-add-section border-bottom">
+	<section class="py-5 quick-add-section border-bottom" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="text-center mb-5">
 				<h6 class="text-uppercase text-danger fw-bold mb-1">Why Choose Us</h6>
@@ -927,42 +990,42 @@
 				<p class="text-muted">From design to delivery, we handle everything with precision.</p>
 			</div>
 			<div class="row g-4">
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="100">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-award"></i></div>
 					<h6 class="fw-bold">10+ Years Experience</h6>
 					<p class="small text-muted">Industry expertise you can trust</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="200">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-user-check"></i></div>
 					<h6 class="fw-bold">250+ Satisfied Clients</h6>
 					<p class="small text-muted">Businesses & individuals love us</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="300">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-palette"></i></div>
 					<h6 class="fw-bold">Creative Design</h6>
 					<p class="small text-muted">Tailored to your brand identity</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="400">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-hand-holding-dollar"></i></div>
 					<h6 class="fw-bold">Affordable Pricing</h6>
 					<p class="small text-muted">Competitive rates for all budgets</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="500">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-truck-fast"></i></div>
 					<h6 class="fw-bold">Fast Delivery</h6>
 					<p class="small text-muted">Quick turnaround for urgent orders</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="600">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-cogs"></i></div>
 					<h6 class="fw-bold">Custom Solutions</h6>
 					<p class="small text-muted">Personalized printing for your needs</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="700">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-headset"></i></div>
 					<h6 class="fw-bold">Professional Support</h6>
 					<p class="small text-muted">Dedicated customer service</p>
 				</div>
-				<div class="col-md-3 col-6 text-center">
+				<div class="col-md-3 col-6 text-center" data-aos="zoom-in" data-aos-delay="800">
 					<div class="quick-add-icon mb-2"><i class="fa-solid fa-file-invoice"></i></div>
 					<h6 class="fw-bold">Free Quote</h6>
 					<p class="small text-muted">Get a no-obligation estimate today</p>
@@ -972,7 +1035,7 @@
 	</section>
 
 	<!-- 4. SERVICES SHORT REFERENCE -->
-	<section class="py-5">
+	<section class="py-5" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="d-flex justify-content-between align-items-end mb-4">
 				<div>
@@ -983,28 +1046,28 @@
 			</div>
 
 			<div class="row g-4">
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="100">
 					<div class="card feature-card p-4 text-center h-100">
 						<i class="fa-solid fa-pen-ruler fs-1 text-danger mb-3"></i>
 						<h5 class="fw-bold">1. Designing</h5>
 						<p class="text-muted small">Creative logos, banner layouts, and poster design setups.</p>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="200">
 					<div class="card feature-card p-4 text-center h-100">
 						<i class="fa-solid fa-print fs-1 text-primary mb-3"></i>
 						<h5 class="fw-bold">2. Printing</h5>
 						<p class="text-muted small">High quality offset, digital cards, flex, and invitation printing.</p>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="300">
 					<div class="card feature-card p-4 text-center h-100">
 						<i class="fa-solid fa-truck-ramp-box fs-1 text-success mb-3"></i>
 						<h5 class="fw-bold">3. Distribution</h5>
 						<p class="text-muted small">Targeted distribution of pamphlets, flyers, and advertising materials.</p>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-3">
+				<div class="col-md-6 col-lg-3" data-aos="flip-left" data-aos-delay="400">
 					<div class="card feature-card p-4 text-center h-100">
 						<i class="fa-solid fa-bullhorn fs-1 text-warning mb-3"></i>
 						<h5 class="fw-bold">4. Advertising</h5>
@@ -1020,7 +1083,7 @@
 	</section>
 
 	<!-- 5. PRODUCTS SHOWCASE -->
-	<section id="products" class="py-5 bg-light border-top border-bottom">
+	<section id="products" class="py-5 bg-light border-top border-bottom" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="text-center mb-5">
 				<h6 class="text-uppercase text-danger fw-bold mb-1">Our Products</h6>
@@ -1029,125 +1092,23 @@
 			</div>
 
 			<div class="row g-3">
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-scroll"></i></div>
-						<h6>Flex Printing</h6>
-						<span class="product-count">Banners & Backdrops</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-image"></i></div>
-						<h6>Posters</h6>
-						<span class="product-count">Promotional Posters</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
-						<h6>Invitation</h6>
-						<span class="product-count">Wedding & Events</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-calendar-days"></i></div>
-						<h6>Calendars</h6>
-						<span class="product-count">Custom Calendars</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-file-lines"></i></div>
-						<h6>Pamphlet</h6>
-						<span class="product-count">Flyers & Brochures</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-stamp"></i></div>
-						<h6>Stamp</h6>
-						<span class="product-count">Rubber Stamps</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-id-card"></i></div>
-						<h6>PVC ID Cards</h6>
-						<span class="product-count">Plastic ID Cards</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-lightbulb"></i></div>
-						<h6>LED Sign</h6>
-						<span class="product-count">Glowing Sign Boards</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-envelope"></i></div>
-						<h6>Envelope</h6>
-						<span class="product-count">Custom Envelopes</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-address-card"></i></div>
-						<h6>Business Cards</h6>
-						<span class="product-count">Visiting Cards</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-bag-shopping"></i></div>
-						<h6>Poly Bags</h6>
-						<span class="product-count">Custom Printed Bags</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-frame"></i></div>
-						<h6>Photo Frame</h6>
-						<span class="product-count">Custom Frames</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-pen-fancy"></i></div>
-						<h6>Letter pad</h6>
-						<span class="product-count">Branded Letterheads</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-tag"></i></div>
-						<h6>Stickers</h6>
-						<span class="product-count">Custom Stickers</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-key"></i></div>
-						<h6>KeyChain</h6>
-						<span class="product-count">Custom Keychains</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-trophy"></i></div>
-						<h6>Trophy</h6>
-						<span class="product-count">Awards & Trophies</span>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-3 mx-auto">
-					<div class="product-grid-card">
-						<div class="product-icon"><i class="fa-solid fa-plate-wheat"></i></div>
-						<h6>Name Plate</h6>
-						<span class="product-count">Acrylic & Metal Plates</span>
-					</div>
-				</div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="50"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-scroll"></i></div><h6>Flex Printing</h6><span class="product-count">Banners & Backdrops</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="100"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-image"></i></div><h6>Posters</h6><span class="product-count">Promotional Posters</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="150"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-envelope-open-text"></i></div><h6>Invitation</h6><span class="product-count">Wedding & Events</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="200"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-calendar-days"></i></div><h6>Calendars</h6><span class="product-count">Custom Calendars</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="250"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-file-lines"></i></div><h6>Pamphlet</h6><span class="product-count">Flyers & Brochures</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="300"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-stamp"></i></div><h6>Stamp</h6><span class="product-count">Rubber Stamps</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="350"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-id-card"></i></div><h6>PVC ID Cards</h6><span class="product-count">Plastic ID Cards</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="400"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-lightbulb"></i></div><h6>LED Sign</h6><span class="product-count">Glowing Sign Boards</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="450"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-envelope"></i></div><h6>Envelope</h6><span class="product-count">Custom Envelopes</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="500"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-address-card"></i></div><h6>Business Cards</h6><span class="product-count">Visiting Cards</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="550"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-bag-shopping"></i></div><h6>Poly Bags</h6><span class="product-count">Custom Printed Bags</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="600"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-frame"></i></div><h6>Photo Frame</h6><span class="product-count">Custom Frames</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="650"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-pen-fancy"></i></div><h6>Letter pad</h6><span class="product-count">Branded Letterheads</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="700"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-tag"></i></div><h6>Stickers</h6><span class="product-count">Custom Stickers</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="750"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-key"></i></div><h6>KeyChain</h6><span class="product-count">Custom Keychains</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="800"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-trophy"></i></div><h6>Trophy</h6><span class="product-count">Awards & Trophies</span></div></div>
+				<div class="col-6 col-md-4 col-lg-3 mx-auto" data-aos="fade-up" data-aos-delay="850"><div class="product-grid-card"><div class="product-icon"><i class="fa-solid fa-plate-wheat"></i></div><h6>Name Plate</h6><span class="product-count">Acrylic & Metal Plates</span></div></div>
 			</div>
 
 			<div class="text-center mt-4">
@@ -1157,7 +1118,7 @@
 	</section>
 
 	<!-- 7. OUR CLIENTS -->
-	<section class="py-5 bg-light border-bottom">
+	<section class="py-5 bg-light border-bottom" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="text-center mb-5">
 				<h6 class="text-uppercase text-danger fw-bold mb-1">Trusted By</h6>
@@ -1166,98 +1127,26 @@
 			</div>
 
 			<div class="row g-4">
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop" alt="TechCorp">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">TechCorp</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="RetailHub">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">RetailHub</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=200&fit=crop" alt="MediLife">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">MediLife</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=200&fit=crop" alt="EduWorld">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">EduWorld</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=200&fit=crop" alt="GrandStay">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">GrandStay</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=200&fit=crop" alt="AutoDrive">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">AutoDrive</p>
-					</div>
-				</div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="50"><div class="client-card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=200&fit=crop" alt="TechCorp"><span class="client-badge">⭐</span><p class="client-name">TechCorp</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="100"><div class="client-card"><img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=200&fit=crop" alt="RetailHub"><span class="client-badge">⭐</span><p class="client-name">RetailHub</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="150"><div class="client-card"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=200&fit=crop" alt="MediLife"><span class="client-badge">⭐</span><p class="client-name">MediLife</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="200"><div class="client-card"><img src="https://images.unsplash.com/photo-1562774053-701939374585?w=400&h=200&fit=crop" alt="EduWorld"><span class="client-badge">⭐</span><p class="client-name">EduWorld</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="250"><div class="client-card"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&h=200&fit=crop" alt="GrandStay"><span class="client-badge">⭐</span><p class="client-name">GrandStay</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="300"><div class="client-card"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=400&h=200&fit=crop" alt="AutoDrive"><span class="client-badge">⭐</span><p class="client-name">AutoDrive</p></div></div>
 			</div>
 			<div class="row g-4 mt-2">
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="FinServe">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">FinServe</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=400&h=200&fit=crop" alt="MediaNet">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">MediaNet</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=200&fit=crop" alt="CafeBrew">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">CafeBrew</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=400&h=200&fit=crop" alt="AI Tech">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">AI Tech</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=200&fit=crop" alt="SportZone">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">SportZone</p>
-					</div>
-				</div>
-				<div class="col-6 col-md-4 col-lg-2">
-					<div class="client-card">
-						<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=200&fit=crop" alt="Foody's">
-						<span class="client-badge">⭐</span>
-						<p class="client-name">Foody's</p>
-					</div>
-				</div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="350"><div class="client-card"><img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=200&fit=crop" alt="FinServe"><span class="client-badge">⭐</span><p class="client-name">FinServe</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="400"><div class="client-card"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?w=400&h=200&fit=crop" alt="MediaNet"><span class="client-badge">⭐</span><p class="client-name">MediaNet</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="450"><div class="client-card"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&h=200&fit=crop" alt="CafeBrew"><span class="client-badge">⭐</span><p class="client-name">CafeBrew</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="500"><div class="client-card"><img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=400&h=200&fit=crop" alt="AI Tech"><span class="client-badge">⭐</span><p class="client-name">AI Tech</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="550"><div class="client-card"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=400&h=200&fit=crop" alt="SportZone"><span class="client-badge">⭐</span><p class="client-name">SportZone</p></div></div>
+				<div class="col-6 col-md-4 col-lg-2" data-aos="flip-up" data-aos-delay="600"><div class="client-card"><img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=200&fit=crop" alt="Foody's"><span class="client-badge">⭐</span><p class="client-name">Foody's</p></div></div>
 			</div>
 		</div>
 	</section>
 
 	<!-- ====== REVIEWS CAROUSEL - AUTO SLIDING ====== -->
-	<section class="review-carousel-section border-bottom">
+	<section class="review-carousel-section border-bottom" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="text-center mb-4">
 				<h6 class="text-uppercase text-danger fw-bold mb-1">Customer Reviews</h6>
@@ -1270,160 +1159,25 @@
 					<!-- Slide 1 -->
 					<div class="carousel-item active">
 						<div class="row g-4">
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"RK Graphics delivered exceptional quality for our business cards and flex banners. The turnaround was quick and the pricing was very competitive. Highly recommended!"</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Rajesh Kumar</div>
-										<div class="reviewer-company">TechCorp Solutions</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"We've been using RK Graphics for all our hospital printing needs - from prescription pads to patient files. Their quality and professionalism are unmatched."</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Dr. Priya Srinivasan</div>
-										<div class="reviewer-company">MediLife Hospital</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"The LED sign board RK Graphics installed for our retail shop has been a game-changer. Excellent quality and they finished the job ahead of schedule."</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Suresh Babu</div>
-										<div class="reviewer-company">GrandStay Retail</div>
-									</div>
-								</div>
-							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="50"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"RK Graphics delivered exceptional quality for our business cards and flex banners. The turnaround was quick and the pricing was very competitive. Highly recommended!"</p><div class="mt-3"><div class="reviewer-name">Rajesh Kumar</div><div class="reviewer-company">TechCorp Solutions</div></div></div></div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="150"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"We've been using RK Graphics for all our hospital printing needs - from prescription pads to patient files. Their quality and professionalism are unmatched."</p><div class="mt-3"><div class="reviewer-name">Dr. Priya Srinivasan</div><div class="reviewer-company">MediLife Hospital</div></div></div></div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="250"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"The LED sign board RK Graphics installed for our retail shop has been a game-changer. Excellent quality and they finished the job ahead of schedule."</p><div class="mt-3"><div class="reviewer-name">Suresh Babu</div><div class="reviewer-company">GrandStay Retail</div></div></div></div>
 						</div>
 					</div>
 					<!-- Slide 2 -->
 					<div class="carousel-item">
 						<div class="row g-4">
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"RK Graphics designed and printed our corporate brochures and catalogues. The attention to detail and color accuracy was superb. Will definitely work with them again."</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Ananya Reddy</div>
-										<div class="reviewer-company">FinServe Group</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"We ordered custom wedding invitations and keychains from RK Graphics. The quality was excellent and delivery was on time. Guests loved the designs!"</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Vikram & Sneha</div>
-										<div class="reviewer-company">Wedding Clients</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"As a school, we needed ID cards, stationery, and event banners. RK Graphics handled everything professionally. Great service and friendly team!"</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Mr. Karthik</div>
-										<div class="reviewer-company">EduWorld School</div>
-									</div>
-								</div>
-							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="50"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"RK Graphics designed and printed our corporate brochures and catalogues. The attention to detail and color accuracy was superb. Will definitely work with them again."</p><div class="mt-3"><div class="reviewer-name">Ananya Reddy</div><div class="reviewer-company">FinServe Group</div></div></div></div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="150"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"We ordered custom wedding invitations and keychains from RK Graphics. The quality was excellent and delivery was on time. Guests loved the designs!"</p><div class="mt-3"><div class="reviewer-name">Vikram & Sneha</div><div class="reviewer-company">Wedding Clients</div></div></div></div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="250"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"As a school, we needed ID cards, stationery, and event banners. RK Graphics handled everything professionally. Great service and friendly team!"</p><div class="mt-3"><div class="reviewer-name">Mr. Karthik</div><div class="reviewer-company">EduWorld School</div></div></div></div>
 						</div>
 					</div>
 					<!-- Slide 3 -->
 					<div class="carousel-item">
 						<div class="row g-4">
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"The PVC ID cards and employee name plates made by RK Graphics are of top quality. They understood our requirements perfectly and delivered ahead of time."</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Meera Rajan</div>
-										<div class="reviewer-company">MediaNet Pvt Ltd</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"We've been ordering flex banners and posters for our events from RK Graphics for over 3 years. Consistent quality and very affordable pricing."</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Arun Prakash</div>
-										<div class="reviewer-company">SportZone Events</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="review-card">
-									<div class="stars">
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-										<i class="fa-solid fa-star"></i>
-									</div>
-									<p class="review-text mt-3">"Customized trophies and mementos for our annual awards ceremony were a big hit. RK Graphics delivered premium quality products that impressed everyone."</p>
-									<div class="mt-3">
-										<div class="reviewer-name">Sanjay Menon</div>
-										<div class="reviewer-company">CafeBrew Chains</div>
-									</div>
-								</div>
-							</div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="50"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"The PVC ID cards and employee name plates made by RK Graphics are of top quality. They understood our requirements perfectly and delivered ahead of time."</p><div class="mt-3"><div class="reviewer-name">Meera Rajan</div><div class="reviewer-company">MediaNet Pvt Ltd</div></div></div></div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="150"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"We've been ordering flex banners and posters for our events from RK Graphics for over 3 years. Consistent quality and very affordable pricing."</p><div class="mt-3"><div class="reviewer-name">Arun Prakash</div><div class="reviewer-company">SportZone Events</div></div></div></div>
+							<div class="col-md-4" data-aos="fade-up" data-aos-delay="250"><div class="review-card"><div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="review-text mt-3">"Customized trophies and mementos for our annual awards ceremony were a big hit. RK Graphics delivered premium quality products that impressed everyone."</p><div class="mt-3"><div class="reviewer-name">Sanjay Menon</div><div class="reviewer-company">CafeBrew Chains</div></div></div></div>
 						</div>
 					</div>
 				</div>
@@ -1453,7 +1207,7 @@
 	</section>
 
 	<!-- ====== FAQ SECTION ====== -->
-	<section class="faq-section py-5 border-bottom">
+	<section class="faq-section py-5 border-bottom" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="text-center mb-5">
 				<h6 class="text-uppercase text-danger fw-bold mb-1">FAQ</h6>
@@ -1463,7 +1217,7 @@
 
 			<div class="row justify-content-center">
 				<div class="col-lg-8">
-					<div class="faq-item">
+					<div class="faq-item" data-aos="fade-right" data-aos-delay="100">
 						<div class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
 							<span>Do you provide graphic design services?</span>
 							<i class="fa-solid fa-chevron-down"></i>
@@ -1473,7 +1227,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item" data-aos="fade-right" data-aos-delay="200">
 						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false">
 							<span>Can I order custom printing?</span>
 							<i class="fa-solid fa-chevron-down"></i>
@@ -1483,7 +1237,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item" data-aos="fade-right" data-aos-delay="300">
 						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false">
 							<span>Do you provide GST invoices?</span>
 							<i class="fa-solid fa-chevron-down"></i>
@@ -1493,7 +1247,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item" data-aos="fade-right" data-aos-delay="400">
 						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false">
 							<span>Do you deliver across Tamil Nadu?</span>
 							<i class="fa-solid fa-chevron-down"></i>
@@ -1503,7 +1257,7 @@
 						</div>
 					</div>
 
-					<div class="faq-item">
+					<div class="faq-item" data-aos="fade-right" data-aos-delay="500">
 						<div class="faq-question collapsed" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false">
 							<span>How can I place an order?</span>
 							<i class="fa-solid fa-chevron-down"></i>
@@ -1518,7 +1272,7 @@
 	</section>
 
 	<!-- 8. GALLERY -->
-	<section id="gallery" class="py-5 border-bottom">
+	<section id="gallery" class="py-5 border-bottom" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="text-center mb-5">
 				<h6 class="text-uppercase text-danger fw-bold mb-1">Our Portfolio</h6>
@@ -1527,7 +1281,7 @@
 			</div>
 
 			<div class="row g-4">
-				<div class="col-md-4 col-sm-6">
+				<div class="col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="100">
 					<div class="gallery-card">
 						<img src="https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&h=400&fit=crop" alt="Flex Banner">
 						<span class="gallery-tag">Flex Printing</span>
@@ -1537,7 +1291,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6">
+				<div class="col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="200">
 					<div class="gallery-card">
 						<img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&h=400&fit=crop" alt="Business Cards">
 						<span class="gallery-tag">Cards</span>
@@ -1547,7 +1301,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-6">
+				<div class="col-md-4 col-sm-6" data-aos="flip-left" data-aos-delay="300">
 					<div class="gallery-card">
 						<img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=400&fit=crop" alt="LED Sign">
 						<span class="gallery-tag">LED Sign</span>
@@ -1566,7 +1320,7 @@
 	</section>
 
 	<!-- 9. CONTACT US -->
-	<section class="py-5 bg-light">
+	<section class="py-5 bg-light" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
 				<div class="row align-items-center">
@@ -1597,7 +1351,7 @@
 	<!-- ============================================================ -->
 	<!-- ===== UPDATED FOOTER - Premium Look ===== -->
 	<!-- ============================================================ -->
-	<footer class="footer">
+	<footer class="footer" data-aos="fade-up" data-aos-duration="1000">
 		<div class="container">
 			<div class="row g-5">
 				<!-- Brand Column -->
@@ -1685,7 +1439,7 @@
 	</footer>
 
 	<!-- WhatsApp Floating Button -->
-	<div class="whatsapp-wrapper">
+	<div class="whatsapp-wrapper" data-aos="fade-up" data-aos-delay="1000">
 		<a href="https://wa.me/919952760656?text=Hi%20RK%20Graphics!%20I%20want%20to%20know%20more%20about%20your%20services." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
 			<i class="fab fa-whatsapp"></i>
 		</a>
@@ -1693,7 +1447,16 @@
 	</div>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<!-- AOS Animation Script -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>
+		// Initialize AOS
+		AOS.init({
+			duration: 800,
+			once: true,
+			offset: 50
+		});
+
 		// Auto play review carousel with pause on hover
 		document.addEventListener('DOMContentLoaded', function () {
 			const carousel = document.getElementById('reviewCarousel');
